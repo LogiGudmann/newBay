@@ -1,7 +1,7 @@
 "use strict";
 
 angular.module("project3App").controller("SellerDlgController",
-function SellerDlgController($scope){
+function SellerDlgController($scope,centrisNotify){
 
 	$scope.seller = {
 		//We can have default
@@ -18,6 +18,7 @@ function SellerDlgController($scope){
 		if($scope.seller.name.length === 0)
 		{
 			//Validation message
+			//centrisNotify.error("sellers.Messages.SaveFailed");
 			return;
 		}
 		//close window and promise object resolves as sucess

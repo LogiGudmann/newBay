@@ -34,7 +34,7 @@
  */
 angular.module("sharedServices").factory("centrisNotify",
 function(toastr, toastrConfig, $translate, $rootScope) {
-	var durationMSec = 10000;
+	var durationMSec = 1000;
 	var defaultTitle = "Centris";
 
 	// Is this the correct place for this? Perhaps not. But we

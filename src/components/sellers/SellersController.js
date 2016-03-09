@@ -11,11 +11,15 @@ function SellersController($scope, AppResource, centrisNotify, SellerDlg) {
 	$scope.onAddSeller = function onAddSeller(){
   		console.log("we go here");
 		SellerDlg.show().then(function(seller) {
-			AppResource.addSeller(seller).sucess(function(seller) {
+			AppResource.addSeller(seller).success(function(seller) {
+			console.log("we go heres sellers");
 			var newSeller = seller;
-			$scope.sellers.push(seller);
+			//$scope.sellers.push(seller);
+			console.log(seller.id);
+			//centrisNotify.success("sellers.Messages.Sucess");
 		}).error(function(){
 			//TODO:
+			console.log("We go here error");	
 			centrisNotify.error("sellers.Messages.SaveFailed");
 		});
 		});
