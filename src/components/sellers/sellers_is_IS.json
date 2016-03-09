@@ -3,6 +3,7 @@
 		"Title":                     "Seljendur",
 		"Name":                      "Nafn",
 		"Category":				     "Flokkur",
+		"Photo":				     "Mynd",
 		"Add":					     "Bæta við",
 		"Messages" : {
 			"LoadFailed":            "Ekki tókst að sækja lista yfir seljendur",

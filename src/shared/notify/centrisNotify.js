@@ -34,7 +34,7 @@
  */
 angular.module("sharedServices").factory("centrisNotify",
 function(toastr, toastrConfig, $translate, $rootScope) {
-	var durationMSec = 1000;
+	var durationMSec = 10000;
 	var defaultTitle = "Centris";
 
 	// Is this the correct place for this? Perhaps not. But we
@@ -63,7 +63,7 @@ function(toastr, toastrConfig, $translate, $rootScope) {
 
 		// In case the previous toast was an undo toast,
 		// which overrode the template path:
-		toastrConfig.templates.toast = "components/centris-notify/centris-notify.tpl.html";
+		toastrConfig.templates.toast = "shared/notify/centris-notify.tpl.html";
 
 		if (type === "success") {
 			toastr.success(message, title, options);
@@ -91,7 +91,7 @@ function(toastr, toastrConfig, $translate, $rootScope) {
 
 		// Slight hack, but hopefully the library will be able to
 		// officcially support per-toast templates in later versions
-		toastrConfig.templates.toast = "components/centris-notify/centris-notify-undo.tpl.html";
+		toastrConfig.templates.toast = "shared/notify/centris-notify-undo.tpl.html";
 
 		// HACK! Because toastr doesn't allow us to pass in
 		// any "Item Data" (see MFC CListCtrl), we need to

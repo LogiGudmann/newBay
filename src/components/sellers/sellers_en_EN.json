@@ -3,6 +3,7 @@
 		"Title":                     "Sellers List",
 		"Name":                      "Name",
 		"Category":					 "Category",
+		"Photo":					 "Photo",
 		"Add":						 "Add",
 		"Messages" : {
 			"LoadFailed":            "Failed to load the list of sellers",

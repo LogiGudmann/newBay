@@ -16,7 +16,9 @@ function SellersController($scope, AppResource, centrisNotify, SellerDlg) {
 			var newSeller = seller;
 			//$scope.sellers.push(seller);
 			console.log(seller.id);
-			//centrisNotify.success("sellers.Messages.Sucess");
+			//Took out apptitle
+			centrisNotify.success("sellers.Messages.SaveSucceeded");
+
 		}).error(function(){
 			//TODO:
 			console.log("We go here error");	

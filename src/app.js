@@ -6,11 +6,12 @@ angular.module("project3App", ["ngRoute", "ui.bootstrap", "sharedServices","pasc
 		controller: "SellersController",
 		templateUrl: "components/sellers/index.html"
 	});
-	//Default language
+	//Default language is Icelandic
 	//View better 
 	$translateProvider.useStaticFilesLoader({
-		prefix:"sellers_",
+		prefix: "lang_",
 		suffix: ".json"
-	});	
+	});
+
 	$translateProvider.use("is");
 });

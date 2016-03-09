@@ -18,7 +18,8 @@ function SellerDlgController($scope,centrisNotify){
 		if($scope.seller.name.length === 0)
 		{
 			//Validation message
-			//centrisNotify.error("sellers.Messages.SaveFailed");
+			console.log("testing error message");
+			centrisNotify.error("sellers.Messages.SaveFailed");
 			return;
 		}
 		//close window and promise object resolves as sucess
