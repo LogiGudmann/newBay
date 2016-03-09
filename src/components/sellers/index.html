@@ -1,1 +1,26 @@
-<div> Hér ætti að birtast listi af seljendum - TODO: útfæra það!</div>
+<!--Didn't include loading message from lecture-->
+
+<button class="btn btn-primary" ng-click="onAddSeller()">
+	<i class="fa fa-plus"/>
+	<span translate="sellers.Add"/>
+</button>
+<table>
+	<thead>
+		<tr>
+			<th>
+			<!--Span used, to be able to put inputs in th-->
+				<span  translate="sellers.Name"/>
+			</th>
+			<th>
+				<span  translate="sellers.Category"/>
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="s in sellers">
+			<td> {{s.name}} </td>
+			<td>{{s.category</td>
+		</tr>
+	</tbody>
+	<tr></tr>
+</table>
