@@ -13,3 +13,4 @@ typings/
 _SpecRunner.html
 .idea/
 npm-debug.log
+.build/

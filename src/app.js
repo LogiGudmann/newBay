@@ -1,18 +1,17 @@
 "use strict";
 
-angular.module("project3App", ["ngRoute", "ui.bootstrap", "sharedServices"])
+angular.module("project3App", ["ngRoute", "ui.bootstrap", "sharedServices","pascalprecht.translate"])
 .config(function ($routeProvider, $translateProvider) {
 	$routeProvider.when("/", {
 		controller: "SellersController",
 		templateUrl: "components/sellers/index.html"
 	});
 	//Default language
-	//View better
+	//View better 
 	$translateProvider.useStaticFilesLoader({
-		prefix:"lang_",
+		prefix:"sellers_",
 		suffix: ".json"
 	});
 
 	$translateProvider.use("is");
-	moment.locale("is");
 });
