@@ -8,7 +8,7 @@ function SellerDlg($uibModal){
 				templateUrl:"components/seller-dlg/seller-dlg.html",
 				controller:"SellerDlgController"
 			});
-
+			console.log("we gohere sllerdlg.js");
 			return modalInstance.result;
 		}
 	};

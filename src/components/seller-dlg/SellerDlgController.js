@@ -14,6 +14,7 @@ function SellerDlgController($scope){
 	//Aligne up
 	$scope.onOk = function onOk() {
 		//TODO: VAlidation
+		console.log("we go here");
 		if($scope.seller.name.length === 0)
 		{
 			//Validation message
