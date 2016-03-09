@@ -1,26 +1,24 @@
 "use strict";
 
 angular.module("project3App").controller("SellersController",
-function SellersController($scope, AppResource, centrisNotify) {
+function SellersController($scope, AppResource, centrisNotify, SellerDlg) {
 	// TODO: load data from AppResource! Also, add other methods, such as to
 	// add/update sellers etc.
-	AppResource.getSellers().sucess(function(sellers) {
+	//WTTSF
+	AppResource.getSellers().success(function(sellers) {
 		$scope.sellers = sellers;
 	});
 	$scope.onAddSeller = function onAddSeller(){
-  
-		/*SellerDlg.show().then(function(seller) {
-			//This window opens on click
-
-			//On okay this function runs
-			AppResource.addSeller(JanSeller).sucess(function(seller) {
+  		console.log("we go here");
+		SellerDlg.show().then(function(seller) {
+			AppResource.addSeller(seller).sucess(function(seller) {
 			var newSeller = seller;
-			$scope.sellers.push(Sellers);
+			$scope.sellers.push(seller);
 		}).error(function(){
 			//TODO:
 			centrisNotify.error("sellers.Messages.SaveFailed");
 		});
-		});*/
+		});
 	
 	};
 });
