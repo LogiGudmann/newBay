@@ -21,7 +21,7 @@
 	</thead>
 	<tbody>
 		<tr ng-repeat="s in sellers">
-			<td> {{s.name}} </td>
+			<td> <a ng-href="#/seller/{{s.id}}">{{s.name}}</a> </td>
 			<td>{{s.category}}</td>
 		</tr>
 	</tbody>
