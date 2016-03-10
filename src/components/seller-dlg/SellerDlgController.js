@@ -19,12 +19,12 @@ function SellerDlgController($scope,centrisNotify){
 		{
 			//Validation message
 			console.log("testing error message");
-			centrisNotify.error("sellers.Messages.NameMissing");
+			centrisNotify.error("sellerdlg.Messages.NameMissing");
 			return;
 		}
 		else if($scope.seller.category.length === 0)
 		{
-			centrisNotify.error("sellers.Messages.CategoryMissing");
+			centrisNotify.error("sellerdlg.Messages.CategoryMissing");
 			return;
 		}
 		//close window and promise object resolves as sucess

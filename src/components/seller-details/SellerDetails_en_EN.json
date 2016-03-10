@@ -1,10 +1,12 @@
 {
-	"sellers" : {
+	"sellerdetails" : {
+		"Title":                     "Sellers List",
 		"Name":                      "Name",
 		"Category":					 "Category",
 		"Photo":					 "Photo",
 		"Add":						 "Add",
-		"AllProd":					 "All Products",
+		"AllProd":					 "All products",
+		"Adding":					 "Adding a product",
 		"TopTen":					 "Top 10 products",
 		"Messages" : {
 			"NameMissing": 		 	 "Missing name",

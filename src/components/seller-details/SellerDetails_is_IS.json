@@ -1,11 +1,15 @@
 {
-	"sellers" : {
-		"Title":                     "Seljendur",
+	"sellerdetails" : {
 		"Name":                      "Nafn",
 		"Category":				     "Flokkur",
 		"Photo":				     "Mynd",
 		"Add":					     "Bæta við",
+		"Adding":					 "Bæta við hlut",
+		"AllProd":					 "Allar vörur",
+		"TopTen":					 "Topp 10 vörurnar",
 		"Messages" : {
+			"NameMissing": 		 	 "Vantar nafn!",
+			"CategoryMissing":		 "Vantar flokk!",
 			"LoadFailed":            "Ekki tókst að sækja lista yfir seljendur",
 			"SaveSucceeded":         "Nýjum seljanda hefur verið bætt við",
 			"SaveFailed":            "Því miður tókst ekki að bæta við nýjum seljanda"

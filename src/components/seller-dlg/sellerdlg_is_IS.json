@@ -1,12 +1,11 @@
 {
-	"sellerDetail" : {
+	"sellerdlg" : {
+		"Title":                     "Seljendur",
 		"Name":                      "Nafn",
 		"Category":				     "Flokkur",
 		"Photo":				     "Mynd",
 		"Add":					     "Bæta við",
-		"Adding":					 "Bæta við hlut",
-		"AllProd":					 "Allar vörur",
-		"TopTen":					 "Topp 10 vörurnar",
+		"Adding":					 "Bæta við vöru",
 		"Messages" : {
 			"NameMissing": 		 	 "Vantar nafn!",
 			"CategoryMissing":		 "Vantar flokk!",

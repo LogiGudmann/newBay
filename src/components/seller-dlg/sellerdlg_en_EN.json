@@ -1,11 +1,14 @@
 {
-	"sellers" : {
+	"sellerdlg" : {
 		"Title":                     "Sellers List",
 		"Name":                      "Name",
 		"Category":					 "Category",
 		"Photo":					 "Photo",
 		"Add":						 "Add",
+		"Adding":					 "Adding a product",
 		"Messages" : {
+			"NameMissing": 		 	 "Missing name",
+			"CategoryMissing":		 "Missing category!",
 			"LoadFailed":            "Failed to load the list of sellers",
 			"SaveSucceeded":         "The seller has been added successfully",
 			"SaveFailed":            "Unfortunately we could not add a new seller"
