@@ -5,6 +5,9 @@
 		"Category":					 "Category",
 		"Photo":					 "Photo",
 		"Add":						 "Add",
+		"Edit":						 "Edit",
+		"OK":						 "Okay",
+		"Cancel":					 "Cancel",
 		"Messages" : {
 			"LoadFailed":            "Failed to load the list of sellers",
 			"SaveSucceeded":         "The seller has been added successfully",

@@ -1,0 +1,38 @@
+
+<div ng-controller = "SellersController">
+	<div class="modal-header">
+		<h2 translate=""></h2>
+	</div>
+<!--Need to fix modal window and put input boxes more from border-->
+
+	<div class="EditModal">
+		<div>
+			<h4>{{seller}}</h4>
+		</div>
+		<div>
+			<h4 translate="sellers.Name"></h4>
+		</div>
+		<div>
+			<input type="text" ng-model= "seller.name" v/>
+		</div>
+
+		<div>
+			<h4 translate="sellers.Category"></h4>
+		</div>
+		<div>
+			<input type="text" ng-model= "seller.category"/>
+		</div>
+
+		<div>
+			<h4 translate="sellers.Photo"></h4>
+		</div>
+		<div>
+			<input type="url" ng-model="seller.imagePath" />
+		</div>
+	</div>
+	<div class="modal-footer">
+		 	<button class="btn btn-primary" type="button" ng-click="onOkEdit()"><span translate="sellers.OK"></span></button>
+		      <button class="btn btn-warning" type="button" ng-click="onCancelEdit()"><span translate="sellers.Cancel"></span></button>
+
+	</div>
+ </div>
