@@ -3,38 +3,7 @@
 <header>
 <h1>NewBay</h1>	
 </header>
-<button class="btn btn-primary" ng-click="onAddSeller()">
-	<i class="fa fa-plus"/>
-	<span translate="sellers.Add"/>
-</button>
-<table style="width: 70%">
-	<thead>
-		<tr>
-			<th>
-			<!--Span used, to be able to put inputs in th-->
-				<span  translate="sellers.Name"/>
-			</th>
-			<th>
-				<span  translate="sellers.Category"/>
-			</th>
-			<th>
-				<span  translate="sellers.Photo"/>
-			</th>
-			<th>
-				<span  translate="sellers.Edit"/>
-			</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr ng-repeat="s in sellers">
-			<td> <a ng-href="#/seller/{{s.id}}">{{s.name}}</a> </td>
-			<td>{{s.category}}</td>
-			<td><img src="{{s.imagePath}}" height="100" width="100"></td>
-			<td><button class="btn btn-primary" type="button" ng-click="onChange(s.id)"><span translate="sellers.Edit"></span></button></td>
-		</tr>
-	</tbody>
-	<tr></tr>
-</table>
+
 	<header>
 		<h1 translate="sellers.Sellers"></h1>
 	</header>
