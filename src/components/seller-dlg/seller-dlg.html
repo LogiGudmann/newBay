@@ -4,30 +4,32 @@
 		<h2 translate="sellerdlg.Adding"></h2>
 	</div>
 <!--Need to fix modal window and put input boxes more from border-->
-	<div class="EditModal">
-		<div>
-			<h4 translate="sellerdlg.Name"></h4>
-		</div>
-		<div>
-			<input type="text" ng-model= "seller.name" />
-		</div>
+	<div class="Seller-Dlg">	
+		<div class="EditModal">
+			<div>
+				<h4 translate="sellerdlg.Name"></h4>
+			</div>
+			<div>
+				<input type="text" ng-model= "seller.name" />
+			</div>
 
-		<div>
-			<h4 translate="sellerdlg.Category"></h4>
-		</div>
-		<div>
-			<input type="text" ng-model= "seller.category"/>
-		</div>
+			<div>
+				<h4 translate="sellerdlg.Category"></h4>
+			</div>
+			<div>
+				<input type="text" ng-model= "seller.category"/>
+			</div>
 
-		<div>
-			<h4 translate="sellerdlg.Photo"></h4>
+			<div>
+				<h4 translate="sellerdlg.Photo"></h4>
+			</div>
+			<div>
+				<input type="url" ng-model="seller.imagePath"/>
+			</div>
 		</div>
-		<div>
-			<input type="url" ng-model="seller.imagePath"/>
+		<div class="modal-footer">
+		 	<button class="btn btn-primary" type="button" ng-click="onOk()">OK</button>
+		      <button class="btn btn-warning" type="button" ng-click="onCancel()">Cancel</button>
 		</div>
-	</div>
-	<div class="modal-footer">
-	 	<button class="btn btn-primary" type="button" ng-click="onOk()">OK</button>
-	      <button class="btn btn-warning" type="button" ng-click="onCancel()">Cancel</button>
 	</div>
  </div>
