@@ -5,6 +5,7 @@
 		"Category":				     "Flokkur",
 		"Photo":				     "Mynd",
 		"Add":					     "Bæta við",
+		"Sellers":                   "Söluaðilar",
 		"Messages" : {
 			"LoadFailed":            "Ekki tókst að sækja lista yfir seljendur",
 			"SaveSucceeded":         "Nýjum seljanda hefur verið bætt við",
