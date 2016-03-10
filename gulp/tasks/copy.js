@@ -11,4 +11,5 @@ gulp.task("copy", () => {
 	gulp.src(config.paths.audio).pipe(gulp.dest(config.paths.target + "/assets/audio"));
 	gulp.src("src/common/assets/**/*.png").pipe(gulp.dest(config.paths.target + "/assets"));
 	gulp.src(assets).pipe(gulp.dest(config.paths.target + "/styles"));
+	gulp.src("src/img/*").pipe(gulp.dest(config.paths.target + "/img"));
 });
