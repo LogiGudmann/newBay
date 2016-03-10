@@ -1,5 +1,5 @@
 {
-	"sellers" : {
+	"sellerdlg" : {
 		"Title":                     "Lista de vendedores",
 		"Name":                      "Nombre",
 		"Category":					 "Categoría",
