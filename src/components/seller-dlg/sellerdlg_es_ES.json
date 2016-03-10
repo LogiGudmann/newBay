@@ -5,7 +5,8 @@
 		"Category":					 "Categoría",
 		"Photo":					 "Foto",
 		"Add":						 "Sumar",
-		"Adding":					 "Añadir un producto",
+		"Adding":					 "Añadir un vendedor",
+		"Salesman":					 "Vendedor",
 		"Messages" : {
 			"NameMissing": 		 	 "Falta el nombre",
 			"CategoryMissing":		 "Falta la categoría!",

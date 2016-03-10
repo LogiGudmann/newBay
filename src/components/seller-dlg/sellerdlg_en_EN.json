@@ -5,7 +5,8 @@
 		"Category":					 "Category",
 		"Photo":					 "Photo",
 		"Add":						 "Add",
-		"Adding":					 "Adding a product",
+		"Adding":					 "Adding a seller",
+		"Salesman":					 "Salesman",
 		"Messages" : {
 			"NameMissing": 		 	 "Missing name",
 			"CategoryMissing":		 "Missing category!",

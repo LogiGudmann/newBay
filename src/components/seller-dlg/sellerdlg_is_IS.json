@@ -5,7 +5,8 @@
 		"Category":				     "Flokkur",
 		"Photo":				     "Mynd",
 		"Add":					     "Bæta við",
-		"Adding":					 "Bæta við vöru",
+		"Adding":					 "Bæta við söluaðila",
+		"Salesman":					 "Sölumaður",
 		"Messages" : {
 			"NameMissing": 		 	 "Vantar nafn!",
 			"CategoryMissing":		 "Vantar flokk!",
