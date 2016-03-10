@@ -1,5 +1,5 @@
 // Karma configuration
-// Generated on Mon Feb 29 2016 10:39:55 GMT+0000 (Greenwich Standard Time)
+// Generated on Thu Mar 10 2016 14:40:22 GMT+0000 (GMT)
 
 module.exports = function(config) {
   config.set({
@@ -7,11 +7,6 @@ module.exports = function(config) {
     // base path that will be used to resolve all patterns (eg. files, exclude)
     basePath: '',
 
-    plugins : [
-        'karma-chrome-launcher',
-        'karma-jasmine',
-        'karma-coverage'
-    ],
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
@@ -20,17 +15,26 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
+      
+
       'src/vendor/jquery/dist/jquery.js',
       'src/vendor/angular/angular.js',
+      'src/vendor/angular-bootstrap/ui-bootstrap.js',
+      'src/vendor/angular-mocks/angular-mocks.js',
       'src/vendor/angular-route/angular-route.js',
-      'src/vendor/angular-bootstrap/ui-bootstrap-tpls.js',
       'src/vendor/angular-toastr/dist/angular-toastr.js',
       'src/vendor/angular-translate/angular-translate.js',
-      'src/vendor/angular-mocks/angular-mocks.js',
-      'src/shared/app.js',
-      'src/shared/**/*.js',
+      'src/vendor/angular-translate-loader-static-files/angular-translate-loader-static-files.js',
+      'src/vendor/bootstrap/dist/js/bootstrap.js',
+      'src/vendor/angular/angular.js',
+      'src/vendor/lodash/dist/lodash.js',
+
       'src/app.js',
-      'src/components/**/*.js'
+      'src/shared/app.js',
+
+      'src/components/**/*.js',
+      'src/components/**/*.spec.js'
+
     ],
 
 
@@ -43,8 +47,17 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-      'src/app.js': 'coverage',
-      'src/components/**/*.js': 'coverage'
+        // Files to include in the code coverage report:
+       'src/components/language/LanguageController.js': ['coverage'],
+       'src/components/seller-details/SellerdetailsController.js': ['coverage'],
+       'src/components/seller-dlg/SellerDlgController.js': ['coverage'],
+       'src/components/seller-dlg/sellerDlg.js': ['coverage'],
+       'src/components/sellers/SellersController.js': ['coverage']
+    },
+
+    coverageReporter: {
+        type: 'html',
+        dir: 'coverage/'
     },
 
 
@@ -78,12 +91,6 @@ module.exports = function(config) {
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
-    singleRun: false,
-
-    coverageReporter: {
-      type : 'html',
-      dir : 'coverage/'
-    }
-
-  });
-};
+    singleRun: false
+  })
+}
