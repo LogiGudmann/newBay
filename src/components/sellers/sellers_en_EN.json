@@ -5,6 +5,7 @@
 		"Category":					 "Category",
 		"Photo":					 "Photo",
 		"Add":						 "Add",
+		"Sellers":                   "Sellers",
 		"Messages" : {
 			"LoadFailed":            "Failed to load the list of sellers",
 			"SaveSucceeded":         "The seller has been added successfully",
