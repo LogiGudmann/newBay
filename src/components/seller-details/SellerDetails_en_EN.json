@@ -8,6 +8,9 @@
 		"AllProd":					 "All products",
 		"Adding":					 "Adding a seller",
 		"TopTen":					 "Top 10 products",
+		"Price":					 "Price",
+		"QuantitySold":				 "Quantity sold",
+		"QuantityInStock":			 "Quantity in stock",
 		"Messages" : {
 			"NameMissing": 		 	 "Missing name",
 			"CategoryMissing":		 "Missing category!",

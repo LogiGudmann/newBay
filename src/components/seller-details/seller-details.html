@@ -1,17 +1,37 @@
 <div>
 <!-- Need to get sellers info and put up tables-->
-<div>
+<div class="header">
 			<img src="{{sellerdetails.imagePath}}" height="250" width="200">
-</div>
-<div>
-			<h2 translate="sellerdetails.Name"></h2>
+			<h2 class="header" translate="sellerdetails.Name"></h2>
 			{{sellerdetails.name}}
-			<!-- TODO: Put name of seller here-->
-</div>
-<div>
-			<h2 translate="sellerdetails.Category"></h2>
+
+			<h2 class="header" translate="sellerdetails.Category"></h2>
 			{{sellerdetails.category}}
 			<!-- TODO: Put name of seller here-->
+</div>
+<div>
+<h3 translate="sellerdetails.AllProd"></h3>
+</div>
+<div class="outlined">	
+				<div class="highlight" ng-repeat="s in sellerproducts" >
+
+				{{s.id}}
+				<img class="thumbnail" src="{{s.imagePath}}" height="80px" width="100px">
+				
+				<span translate="sellerdetails.Name"></span>
+				{{s.name}}
+				<span translate="sellerdetails.Price"></span>
+				{{s.price}}
+				<!--
+				Þurfum í rauninni ekki fyrren í top 10
+				<span translate="sellerdetails.QuantitySold"></span>
+				{{s.quantitySold}}
+				<br>
+				<span translate="sellerdetails.QuantityInStock"></span>
+				{{s.quantityInStock}}-->
+				<br>
+				
+				</div>
 </div>
 <!--<div translate="sellerDetail.Name"/>
 Span still blocking everything out after first one..

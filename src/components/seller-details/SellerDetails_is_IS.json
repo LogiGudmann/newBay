@@ -7,6 +7,9 @@
 		"Adding":					 "Bæta við hlut",
 		"AllProd":					 "Allar vörur",
 		"TopTen":					 "Topp 10 vörurnar",
+		"Price":					 "Verð",
+		"QuantitySold":				 "Fjöldi seldra",
+		"QuantityInStock":			 "Fjöldi til á lager",
 		"Messages" : {
 			"NameMissing": 		 	 "Vantar nafn!",
 			"CategoryMissing":		 "Vantar flokk!",
