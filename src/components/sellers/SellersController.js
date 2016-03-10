@@ -1,7 +1,7 @@
 "use strict";
 
 angular.module("project3App").controller("SellersController",
-function SellersController($scope, AppResource, centrisNotify, SellerDlg,SellersDlg) {
+function SellersController($scope, AppResource, centrisNotify, SellerDlg) {
 	// TODO: load data from AppResource! Also, add other methods, such as to
 	// add/update sellers etc.
 	$scope.sellerdetails = {};
@@ -20,7 +20,7 @@ function SellersController($scope, AppResource, centrisNotify, SellerDlg,Sellers
 		var seller = $scope.sellerdetails;
 		console.log("Testing seller name");
 		console.log(seller.name);
-		SellersDlg.show().then(function(seller) {
+		SellerDlg.show(seller).then(function(seller) {
 			console.log("we go here show dlg");
 			AppResource.updateSeller(id, seller).success(function(seller) {
 				//TODO:

@@ -1,15 +1,9 @@
 "use strict";
 
 angular.module("project3App").controller("SellerDlgController",
-function SellerDlgController($scope,centrisNotify){
+function SellerDlgController($scope,centrisNotify, seller){
 
-	$scope.seller = {
-		//We can have default
-		name:    "",
-		category:    "",
-		imagePath:   ""
-
-	};
+	$scope.seller = seller;
 
 	//Aligne up
 	$scope.onOk = function onOk() {
