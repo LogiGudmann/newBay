@@ -8,6 +8,7 @@
 		"Edit":						 "Breyta",
 		"OK":						 "Okey",
 		"Cancel":					 "Hætta við",
+		"Sellers":                   "Söluaðilar",
 		"Messages" : {
 			"LoadFailed":            "Ekki tókst að sækja lista yfir seljendur",
 			"SaveSucceeded":         "Nýjum seljanda hefur verið bætt við",

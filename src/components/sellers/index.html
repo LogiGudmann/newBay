@@ -35,4 +35,39 @@
 	</tbody>
 	<tr></tr>
 </table>
+	<header>
+		<h1 translate="sellers.Sellers"></h1>
+	</header>
+
+	<div class="Sellers">
+		<button class="btn btn-primary addSellerBtn" ng-click="onAddSeller()">
+			<i class="fa fa-plus"/>
+			<span translate="sellers.Add"/>
+		</button>
+
+		<table class="table table-condensed" style="width: 70%">
+			<thead>
+				<tr>
+					<th>
+						<!--Span used, to be able to put inputs in th-->
+						<span  translate="sellers.Name"/>
+					</th>
+					<th>
+						<span  translate="sellers.Category"/>
+					</th>
+					<th>
+						<span  translate="sellers.Photo"/>
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="s in sellers">
+						<td> <a ng-href="#/seller/{{s.id}}">{{s.name}}</a> </td>
+						<td>{{s.category}}</td>
+						<td><img class="thumbnail" src="{{s.imagePath}}"></td>
+				</tr>
+			</tbody>
+			<tr></tr>
+		</table>
+	</div>
 </div>

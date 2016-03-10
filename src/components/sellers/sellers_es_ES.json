@@ -8,6 +8,7 @@
 		"Edit":						 "Cambiar",
 		"OK":						 "Bien",
 		"Cancel":					 "Cancelar",
+		"Sellers":					 "Vendedores",
 		"Messages" : {
 			"LoadFailed":            "No se pudo cargar la lista de los vendedores",
 			"SaveSucceeded":         "El vendedor ha sido agregado con exito",
