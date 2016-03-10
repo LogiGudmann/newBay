@@ -7,7 +7,7 @@
 	<i class="fa fa-plus"/>
 	<span translate="sellers.Add"/>
 </button>
-<table style="width: 50%">
+<table style="width: 70%">
 	<thead>
 		<tr>
 			<th>
@@ -17,12 +17,16 @@
 			<th>
 				<span  translate="sellers.Category"/>
 			</th>
+			<th>
+				<span  translate="sellers.Photo"/>
+			</th>
 		</tr>
 	</thead>
 	<tbody>
 		<tr ng-repeat="s in sellers">
 			<td> <a ng-href="#/seller/{{s.id}}">{{s.name}}</a> </td>
 			<td>{{s.category}}</td>
+			<td><img src="{{s.imagePath}}" height="100" width="100"></td>
 		</tr>
 	</tbody>
 	<tr></tr>

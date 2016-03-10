@@ -18,4 +18,11 @@ gulp.task("language-en", (cb) => {
 		.on("end", cb);
 });
 
-gulp.task("languages", ["language-is", "language-en"]);
+gulp.task("language-es", (cb) => {
+	gulp.src("src/**/*_ES.json")
+		.pipe(extend("lang_es.json", true, "\t"))
+		.pipe(gulp.dest(config.paths.target + "/"))
+		.on("end", cb);
+});
+
+gulp.task("languages", ["language-is", "language-en","language-es"]);

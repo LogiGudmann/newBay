@@ -13,4 +13,8 @@ angular.module("project3App").controller("LanguageController",
 			console.log("We go here EN");
 			$translate.use("en");
 		};
+		$scope.Spanish = function Spanish(){
+			console.log("We go here, Spanish");
+			$translate.use("es");
+		};
 	});

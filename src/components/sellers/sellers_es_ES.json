@@ -1,0 +1,14 @@
+{
+	"sellers" : {
+		"Title":                     "Lista de vendedores",
+		"Name":                      "Nombre",
+		"Category":					 "Categoría",
+		"Photo":					 "Foto",
+		"Add":						 "Sumar",
+		"Messages" : {
+			"LoadFailed":            "No se pudo cargar la lista de los vendedores",
+			"SaveSucceeded":         "El vendedor ha sido agregado con exito",
+			"SaveFailed":            "Por desgracia, no hemos podido añadir un nuevo vendedor"
+		}
+	}
+}
