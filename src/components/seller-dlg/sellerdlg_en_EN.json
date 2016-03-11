@@ -10,6 +10,7 @@
 		"Messages" : {
 			"NameMissing": 		 	 "Missing name",
 			"CategoryMissing":		 "Missing category!",
+			"ImagePath":			 "Missing image path",
 			"LoadFailed":            "Failed to load the list of sellers",
 			"SaveSucceeded":         "The seller has been added successfully",
 			"SaveFailed":            "Unfortunately we could not add a new seller"

@@ -10,6 +10,7 @@
 		"Messages" : {
 			"NameMissing": 		 	 "Vantar nafn!",
 			"CategoryMissing":		 "Vantar flokk!",
+			"ImagePath":			 "Vantar url á mynd",
 			"LoadFailed":            "Ekki tókst að sækja lista yfir seljendur",
 			"SaveSucceeded":         "Nýjum seljanda hefur verið bætt við",
 			"SaveFailed":            "Því miður tókst ekki að bæta við nýjum seljanda"

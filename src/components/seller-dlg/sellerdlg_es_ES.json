@@ -10,6 +10,7 @@
 		"Messages" : {
 			"NameMissing": 		 	 "Falta el nombre",
 			"CategoryMissing":		 "Falta la categoría!",
+			"ImagePath":			 "Falta ruta de la imagen",
 			"LoadFailed":            "No se pudo cargar la lista de los vendedores",
 			"SaveSucceeded":         "El vendedor ha sido agregado con exito",
 			"SaveFailed":            "Por desgracia, no hemos podido añadir un nuevo vendedor"

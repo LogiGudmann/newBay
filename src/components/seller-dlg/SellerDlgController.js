@@ -25,6 +25,12 @@ function SellerDlgController($scope,centrisNotify, seller){
 			centrisNotify.error("sellerdlg.Messages.CategoryMissing");
 			return;
 		}
+		else if($scope.seller.imagePath === undefined || $scope.seller.imagePath.length === 0)	
+		{
+			//Validation message
+			centrisNotify.error("sellerdlg.Messages.ImagePath");
+			return;
+		}
 		/*else if($scope.seller.imagePath !== undefined || $scope.seller.imagePath.length !== 0)
 		{
 			console.log("Why don't we go here");
