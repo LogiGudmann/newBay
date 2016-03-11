@@ -1,0 +1,49 @@
+
+<div>
+	<div class="modal-header">
+		<h2 translate="sellerdetails.Adding"></h2>
+	</div>
+<!--Need to fix modal window and put input boxes more from border-->
+	<div class="Seller-Dlg">	
+		<div class="EditModal">
+			<div>
+				<h4 translate="sellerdetails.Name"></h4>
+			</div>
+			<div>
+				<input type="text" ng-model= "productdetails.name" />
+			</div>
+
+			<div>
+				<h4 translate="sellerdetails.Price"></h4>
+			</div>
+			<div>
+				<input type="text" ng-model= "productdetails.Price"/>
+			</div>
+
+			<div>
+				<h4 translate="sellerdetails.QuantitySold"></h4>
+			</div>
+			<div>
+				<input type="text" ng-model= "productdetails.quantitySold"/>
+			</div>
+			
+			<div>
+				<h4 translate="sellerdetails.QuantityInStock"></h4>
+			</div>
+			<div>
+				<input type="text" ng-model= "productdetails.quantityInStock"/>
+			</div>
+
+
+			<div>
+				<h4 translate="sellerdetails.Photo"></h4>
+			</div>
+			<div>
+				<input type="url" ng-model="productdetails.imagePath"/>
+			</div>
+		</div>
+	</div>
+	<div class="modal-footer">
+	 	<button class="btn btn-primary" type="button" ng-click="onOk()"><span translate="sellers.OK"></span></button>
+      	<button class="btn btn-warning" type="button" ng-click="onCancel()"><span translate="sellers.Cancel"></span></button>
+</div>
