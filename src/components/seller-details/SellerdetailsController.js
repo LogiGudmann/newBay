@@ -29,7 +29,7 @@ angular.module("project3App").controller("SellerdetailsController",
 		var seller = $scope.sellerdetails;
 		console.log("Testing seller name");
 		console.log(seller.name);
-		SellerDlg.show(seller).then(function(seller) {
+		SellerDlg.show(seller).then(function(seller) 
 			console.log("we go here show dlg");
 			AppResource.updateSeller(id, seller).success(function(seller) {
 				//TODO:
@@ -44,11 +44,13 @@ angular.module("project3App").controller("SellerdetailsController",
   		console.log("we go here");
   		console.log("Error coming from here");
 		SellerDetailsDlg.show().then(function(productdetails) {
-			AppResource.addSellerProduct($scope.id, productdetails).success(function(productdetails) {
+			AppResource.addSellerProduct(id, productdetails).success(function(productdetails) {
 				//Giving me errors
 				//Vill hann fá id á vörunni eða seljandanum???
 			centrisNotify.success("sellers.Messages.SaveSucceeded");
-
+			AppResource.getSellerProducts(id).success(function(sellerproducts){
+					$scope.sellerproducts = sellerproducts;
+			});
 		}).error(function(){
 			//TODO:
 			console.log("We go here error");	
