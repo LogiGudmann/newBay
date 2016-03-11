@@ -1,6 +1,7 @@
 .Sellers {
 	.addSellerBtn {
 		margin-top:20px;
+		margin-bottom: 10px;
 		float:right;
 
 	}
@@ -26,6 +27,7 @@
 		margin:1px;
 		padding:1px;
 		&:hover {
+			z-index: 5;
 			-webkit-transition: all 500ms 0ms ease-in-out;
 			transition: all 500ms 0ms ease-in-out;
 			-webkit-transform: scale(2);
@@ -171,42 +173,38 @@
 .fancyButton {
 	border-radius: 10px;
 	border: none;
+	font-size: 1.25em;
+	text-transform: uppercase;
 	color: #fff;
 	background: #333;
 	cursor: pointer;
 	margin-top:50%;
-	display: inline-block;
-	text-transform: uppercase;
-	font-weight: 700;
 	outline: none;
-	position: relative;
+	height: 70px;
+	min-width: 70px;
 	-webkit-transition: all 0.3s;
 	-moz-transition: all 0.3s;
 	transition: all 0.3s;
-	height: 70px;
-	min-width: 70px;
-	font-size: 16px;
-	overflow: hidden;
 	-webkit-backface-visibility: hidden;
 	-moz-backface-visibility: hidden;
 	backface-visibility: hidden;
+	overflow: hidden;
 	&:after {
 		content: '';
-		position: absolute;
 		z-index: -1;
 		-webkit-transition: all 0.3s;
 		-moz-transition: all 0.3s;
 		transition: all 0.3s;
 	}
 	&:active {
-		background: #9053a9;
-		top: 2px;
+		background: #444;
+		top: 4px;
 	}
 	span {
 		margin-top:25%;
 		display: inline-block;
-		width: 100px;
 		height: 70px;
+		width: 100px;
 		-webkit-transition: all 0.3s;
 		-webkit-backface-visibility: hidden;
 		-moz-transition: all 0.3s;
@@ -219,13 +217,13 @@
 		height: 100%;
 		width: 100%;
 		line-height: 2.5;
-		font-size: 180%;
+		font-size: 170%;
 		-webkit-transition: all 0.3s;
 		-moz-transition: all 0.3s;
 		transition: all 0.3s;
 	}
 	&:active:before {
-		color: #703b87;
+		color: #fff;
 	}
 	&:hover span {
 		-webkit-transform: translateY(300%);
