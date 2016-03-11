@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="project3App">
+<html ng-app="project3App" style="height: 100%;">
 <head>
 	<title>WEPO Assignment 3 - NewBay</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +8,11 @@
 	<link rel="stylesheet" href="styles/app.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 </head>
-	<div class="MainApp" ng-controller = "LanguageController">
+<body style="min-height: 100%;">
+<!--  class="container-fluid" -->
+	<main>
+		<div class="Main clearfix" ng-view id="content"></div>
+				<span class="MainApp" ng-controller = "LanguageController">
 		<a href="" ng-click="Icelandic()">
 		<img class="flags" src="img/is.svg"/>
 		<span translate="language.IS"/>
@@ -21,9 +25,7 @@
 		<img class="flags" src="img/es.svg"/>
 		<span translate="language.ES"/>
 		</a>
-	</div>
-	<main class="container-fluid">
-		<div class="Main clearfix" ng-view id="content"></div>
+	</span>
 	</main>
 		
 	<toaster-container></toaster-container>
