@@ -20,7 +20,7 @@ function SellerDetailsDlgController($scope,centrisNotify, productdetails){
 			centrisNotify.error("sellerdetails.Messages.NameMissing");
 			return;
 		}
-		else if($scope.productdetails.price === undefined || $scope.productdetails.price.length === 0)
+		else if($scope.productdetails.price === undefined || $scope.productdetails.price.length === 0 )
 		{
 			//Validation message
 			centrisNotify.error("sellerdetails.Messages.PriceMissing");
