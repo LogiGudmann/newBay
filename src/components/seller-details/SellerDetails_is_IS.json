@@ -13,6 +13,9 @@
 		"Messages" : {
 			"NameMissing": 		 	 "Vantar nafn!",
 			"CategoryMissing":		 "Vantar flokk!",
+			"PriceMissing":			 "Vantar verð!",
+			"QuantitySoldMissing":   "Vantar fjölda seldra!",
+			"QuantityInStock":	     "Vantar fjölda til á lager",
 			"LoadFailed":            "Ekki tókst að sækja lista yfir seljendur",
 			"SaveSucceeded":         "Nýjum seljanda hefur verið bætt við",
 			"SaveFailed":            "Því miður tókst ekki að bæta við nýjum seljanda"

@@ -14,6 +14,9 @@
 		"Messages" : {
 			"NameMissing": 		 	 "Falta el nombre",
 			"CategoryMissing":		 "Falta la categoría!",
+			"PriceMissing":			 "Falta precio!",
+			"QuantitySoldMissing":   "Falta cantidad vendida!",
+			"QuantityInStock":	     "Falta cantidad en stock!",
 			"LoadFailed":            "No se pudo cargar la lista de los vendedores",
 			"SaveSucceeded":         "El vendedor ha sido agregado con exito",
 			"SaveFailed":            "Por desgracia, no hemos podido añadir un nuevo vendedor"
