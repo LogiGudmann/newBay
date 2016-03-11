@@ -41,7 +41,7 @@
 		background-color: #eee;
 	}
 	.sellerRow {
-		  	transition: background-color 0.3s ease;
+		  	transition: background-color 0.4s ease;
 		&:hover{
 			background-color:#ddd;
 		}
@@ -65,7 +65,6 @@
 		overflow: hidden;
 		z-index: 1;
 		background: url('/img/egBanner.jpg') no-repeat center center fixed;
-
 		background-size: cover;
 	}
 	.main-title {
@@ -146,7 +145,7 @@
 		}
 	}
 	a:hover {
-		color:#666666;
+		color:#666;
 		outline: none;
 		text-decoration: none;
 		&::after {
@@ -157,7 +156,7 @@
 		}
 	}
 	a:focus {
-		color:#666666;
+		color:#666;
 		outline: none;
 		text-decoration: none;
 		&::after {
@@ -168,4 +167,84 @@
 		}
 	}
 }
+
+.fancyButton {
+	border-radius: 10px;
+	border: none;
+	color: #fff;
+	background: #333;
+	cursor: pointer;
+	margin-top:50%;
+	display: inline-block;
+	text-transform: uppercase;
+	font-weight: 700;
+	outline: none;
+	position: relative;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+	height: 70px;
+	min-width: 70px;
+	font-size: 16px;
+	overflow: hidden;
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	backface-visibility: hidden;
+	&:after {
+		content: '';
+		position: absolute;
+		z-index: -1;
+		-webkit-transition: all 0.3s;
+		-moz-transition: all 0.3s;
+		transition: all 0.3s;
+	}
+	&:active {
+		background: #9053a9;
+		top: 2px;
+	}
+	span {
+		margin-top:25%;
+		display: inline-block;
+		width: 100px;
+		height: 70px;
+		-webkit-transition: all 0.3s;
+		-webkit-backface-visibility: hidden;
+		-moz-transition: all 0.3s;
+		-moz-backface-visibility: hidden;
+		transition: all 0.3s;
+		backface-visibility: hidden;
+	}
+	&:before {
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		line-height: 2.5;
+		font-size: 180%;
+		-webkit-transition: all 0.3s;
+		-moz-transition: all 0.3s;
+		transition: all 0.3s;
+	}
+	&:active:before {
+		color: #703b87;
+	}
+	&:hover span {
+		-webkit-transform: translateY(300%);
+		-moz-transform: translateY(300%);
+		-ms-transform: translateY(300%);
+		transform: translateY(300%);
+	}
+	&:before {
+		left: 0;
+		top: -100%;
+	}
+	&:hover:before {
+		top: 0;
+	}
+}
+
+
+
+
+
+
 
