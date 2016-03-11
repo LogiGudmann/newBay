@@ -9,25 +9,24 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 </head>
 <body style="min-height: 100%;">
-<!--  class="container-fluid" -->
 	<main>
 		<div class="Main clearfix" ng-view id="content"></div>
-				<span class="MainApp" ng-controller = "LanguageController">
-		<a href="" ng-click="Icelandic()">
-		<img class="flags" src="img/is.svg"/>
-		<span translate="language.IS"/>
-		</a>
-		<a href="" ng-click="English()">
-		<img class="flags" src="img/us.svg"/>
-		<span translate="language.EN"/>
-		</a>
-		<a href="" ng-click="Spanish()">
-		<img class="flags" src="img/es.svg"/>
-		<span translate="language.ES"/>
-		</a>
-	</span>
+		<span class="MainApp" ng-controller = "LanguageController">
+			<a href="" ng-click="Icelandic()">
+				<img class="flags" src="img/is.svg"/>
+				<span translate="language.IS"/>
+			</a>
+			<a href="" ng-click="English()">
+				<img class="flags" src="img/us.svg"/>
+				<span translate="language.EN"/>
+			</a>
+			<a href="" ng-click="Spanish()">
+				<img class="flags" src="img/es.svg"/>
+				<span translate="language.ES"/>
+			</a>
+		</span>
 	</main>
-		
+
 	<toaster-container></toaster-container>
 
 	<!-- inject:vendor:js -->

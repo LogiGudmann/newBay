@@ -2,20 +2,18 @@
 <div>	
 	<div class="headerContent">
 		<div id="large-header" class="large-header">
-				<header>
+			<header>
 				<h1 class="main-title">NewBay</h1>	
 			</header>
 		</div>
-		</div>
+	</div>
 
-		<div class="Sellers">
-
-			<div class="content ">
-
-				<div class="container">
-				<span class="headerSpan fontStyles">
-					<header class="sellerTitleHeader">
-						<h1 translate="sellers.Sellers"></h1>
+	<div class="Sellers">
+		<div class="content ">
+			<div class="container">
+				<span class="headerSpan">
+					<header>
+						<h1 translate="sellers.Sellers" class="sellerTitleHeader"></h1>
 					</header>
 
 					<button class="btn btn-primary addSellerBtn fontStyles" ng-click="onAddSeller()">
@@ -23,35 +21,35 @@
 						<span translate="sellers.Add"/>
 					</button>
 				</span>
-					<table class="table table-condensed tableCustomHover fontStyles">
-						<thead>
-							<tr>
-								<th>
-									<!--Span used, to be able to put inputs in th-->
-									<span  translate="sellers.Name"/>
-								</th>
-								<th>
-									<span  translate="sellers.Category"/>
-								</th>
-								<th>
-									<span  translate="sellers.Photo"/>
-								</th>
-								<th>
-									<span  translate="sellers.Edit"/>
-								</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr ng-repeat="s in sellers">
-								<td > <a ng-href="#/seller/{{s.id}}">{{s.name}}</a> </td>
-								<td >{{s.category}}</td>
-								<td ><img class="thumbnail" src="{{s.imagePath}}"></td>
-								<td ><button class="btn btn-primary" type="button" ng-click="onChange(s.id)"><span translate="sellers.Edit"></span></button></td>
-							</tr>
-						</tbody>
-						<tr></tr>
-					</table>
-				</div>
+				<table class="table table-condensed fontStyles">
+					<thead class="tableHeadStyle">
+						<tr>
+							<th>
+								<!--Span used, to be able to put inputs in th-->
+								<span  translate="sellers.Name"/>
+							</th>
+							<th>
+								<span  translate="sellers.Category"/>
+							</th>
+							<th>
+								<span  translate="sellers.Photo"/>
+							</th>
+							<th>
+								<span  translate="sellers.Edit"/>
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="s in sellers" class="sellerRow">
+							<td class="rowName"><a ng-href="#/seller/{{s.id}}">{{s.name}}</a></td>
+							<td><span class="categoryStyle">{{s.category}}</span></td>
+							<td ><img class="thumbnail" src="{{s.imagePath}}"></td>
+							<td ><button class="btn btn-primary" type="button" ng-click="onChange(s.id)"><span translate="sellers.Edit"></span></button></td>
+						</tr>
+					</tbody>
+					<tr></tr>
+				</table>
 			</div>
 		</div>
 	</div>
+</div>
