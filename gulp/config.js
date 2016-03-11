@@ -46,7 +46,8 @@ module.exports = {
 		lint:    [
 			"src/**/*.js",
 			"!src/vendor/**/*.*",
-			"!src/assets/**/*.*"
+			"!src/assets/**/*.*",
+			"!src/**/*.spec.js"
 		],
 		tests:   [
 			"src/**/*-spec.js"
