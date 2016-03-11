@@ -24,6 +24,7 @@ function SellersController($scope, AppResource, centrisNotify, SellerDlg) {
 			console.log("we go here show dlg");
 			AppResource.updateSeller(id, seller).success(function(seller) {
 				//TODO:
+				centrisNotify.success("sellers.Messages.SaveSucceeded");
 			}.error(function(){
 				centrisNotify.error("sellers.Messages.SaveFailed");
 			}));

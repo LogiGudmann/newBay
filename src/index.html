@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="project3App">
+<html ng-app="project3App" style="height: 100%;">
 <head>
 	<title>WEPO Assignment 3 - NewBay</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,25 +7,28 @@
 	<link rel="stylesheet" href="styles/vendor.css">
 	<link rel="stylesheet" href="styles/app.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 </head>
-	<div class="MainApp" ng-controller = "LanguageController">
-		<a href="" ng-click="Icelandic()">
-		<img class="flags" src="img/is.svg"/>
-		<span translate="language.IS"/>
-		</a>
-		<a href="" ng-click="English()">
-		<img class="flags" src="img/us.svg"/>
-		<span translate="language.EN"/>
-		</a>
-		<a href="" ng-click="Spanish()">
-		<img class="flags" src="img/es.svg"/>
-		<span translate="language.ES"/>
-		</a>
-	</div>
-	<main class="container-fluid">
+<body style="min-height: 100%;">
+	<main>
 		<div class="Main clearfix" ng-view id="content"></div>
+		<span class="MainApp" ng-controller = "LanguageController">
+			<a href="" ng-click="Icelandic()">
+				<img class="flags" src="img/is.svg"/>
+				<span translate="language.IS"/>
+			</a>
+			<a href="" ng-click="English()">
+				<img class="flags" src="img/us.svg"/>
+				<span translate="language.EN"/>
+			</a>
+			<a href="" ng-click="Spanish()">
+				<img class="flags" src="img/es.svg"/>
+				<span translate="language.ES"/>
+			</a>
+		</span>
 	</main>
-		
+
 	<toaster-container></toaster-container>
 
 	<!-- inject:vendor:js -->

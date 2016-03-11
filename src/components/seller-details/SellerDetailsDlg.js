@@ -11,8 +11,7 @@ function SellerDetailsDlg($uibModal){
 					productdetails:productdetails
 				}
 			});
-			console.log("error coming from here 2");
-			console.log("we go here SellerDetailsDlg");
+			//Created a new modal window for adding and editing products
 			return modalInstance.result;
 		}
 	};
