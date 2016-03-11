@@ -9,7 +9,6 @@ function SellerDetailsDlgController($scope,centrisNotify, productdetails){
 	//Aligne up
 	$scope.onOk = function onOk() {
 		//TODO: VAlidation
-		console.log("we go here");
 		if($scope.productdetails === undefined)
 		{
 			//Validation message
@@ -22,7 +21,7 @@ function SellerDetailsDlgController($scope,centrisNotify, productdetails){
 			centrisNotify.error("sellerdetails.Messages.NameMissing");
 			return;
 		}
-		else if($scope.productdetails.Price === undefined || $scope.productdetails.Price.length === 0)
+		else if($scope.productdetails.price === undefined || $scope.productdetails.price.length === 0)
 		{
 			//Validation message
 			centrisNotify.error("sellerdetails.Messages.PriceMissing");

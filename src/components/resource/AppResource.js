@@ -174,11 +174,47 @@ function AppResource() {
 			}
 
 			return mockHttpPromise(success, product);
+		},
+		getProductDetails: function getProductDetails(id){
+			//Get the product we want
+			var product;
+			for(var i = 0 ; i < mockProducts.length; ++i){
+				if(mockProducts[i].product.id === id)
+				{
+					product = mockProducts[i];
+					break;
+				}
+			}
+			if(product)
+			{
+				console.log("We Find it!");
+				return mockHttpPromise(mockResource.successGetSellerProducts, product);
+			}
+			else
+			{
+				console.log("We don't find it!");
+				return mockHttpPromise(false, null);
+			}
+		},
+		updateSellerProduct: function updateSellerProduct(id,product){
+			//Update the product we want to update
+			if(mockResource.successUpdateSellerProduct){
+				//Get the product by finding the id
+				var currentProd = _.find(mockProducts, function(o){ return o.id === id;});
+				//console.log("Inside AppResource updateSellerProduct:");
+				//console.log(currentProd.name);
+				if (currentProd !== null) {
+					currentProd.name   = product.name;
+					currentProd.price = product.price;
+					currentProd.quantitySold = product.quantitySold;
+					currentProd.quantityInStock = product.quantityInStock;
+					currentProd.imagePath = product.imagePath;
+				}
+			}
+			return mockHttpPromise(mockResource.successUpdateSellerProduct, product);
+			
 		}
 
-		// TODO: the updateProduct() function is left as an exercise to
-		// the reader...
 	};
-
 	return mockResource;
 });
