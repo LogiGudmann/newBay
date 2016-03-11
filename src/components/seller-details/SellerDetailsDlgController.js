@@ -8,7 +8,6 @@ function SellerDetailsDlgController($scope,centrisNotify, productdetails){
 
 	//Aligne up
 	$scope.onOk = function onOk() {
-		//TODO: VAlidation
 		if($scope.productdetails === undefined)
 		{
 			//Validation message
@@ -39,13 +38,14 @@ function SellerDetailsDlgController($scope,centrisNotify, productdetails){
 			centrisNotify.error("sellerdetails.Messages.QuantityInStock");
 			return;
 		}
+		//validates if the image starts with https or http
 		else if($scope.productdetails.imagePath === undefined || $scope.productdetails.imagePath.length === 0)	
 		{
 			//Validation message
 			centrisNotify.error("sellerdetails.Messages.ImagePath");
 			return;
 		}
-		//No validation for image
+
 				//close window and promise object resolves as sucess
 		$scope.$close($scope.productdetails);
 	};

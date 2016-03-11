@@ -23,7 +23,6 @@ angular.module("project3App").controller("SellerdetailsController",
 					console.log("We finally go here!!!!(productdetails)");
 					$scope.productdetails = productdetails;
 				});
-		
 		//As $scope.prouductdetails returns us id: sellerid and product, which is the product we want
 		//We assign product directly to that as we don't need the sellerid
 		//The function addproduct assigns the sellerid for us
