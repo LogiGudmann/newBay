@@ -37,7 +37,7 @@ function SellerDlgController($scope,centrisNotify, seller){
 		}
 		
 		*/
-}
+
 		//close window and promise object resolves as success
 		$scope.$close($scope.seller);
 	};
