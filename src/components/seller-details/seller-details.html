@@ -9,7 +9,7 @@
 			{{sellerdetails.category}}
 			<!-- TODO: Put name of seller here-->
 </div>
-<div class="Sellers">
+<div ng-controller="ProductController"   class="Sellers">
 		<button class="btn btn-primary addProductBtn" ng-click="onAddProduct()">
 			<i class="fa fa-plus"/>
 			<span translate="sellerdetails.Add"/>
@@ -17,7 +17,7 @@
 <div>
 <h3 translate="sellerdetails.AllProd"></h3>
 </div>
-<div ng-controller="SellerdetailsController">	
+<div ng-controller="ProductController">	
 				<div ng-repeat="s in sellerproducts" >
 				<div product-details-dir id="{{s.id}}" name="{{s.name}}" price="{{s.price}}"  imagepath="{{s.imagePath}}">
 				</div>

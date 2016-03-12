@@ -11,7 +11,6 @@
 		});
 
 		$scope.onChange = function onChange(id){
-			
 			AppResource.getSellerDetails(id).success(function(sellerdetails){
 				$scope.sellerdetails = sellerdetails;
 			});
@@ -21,9 +20,9 @@
 				AppResource.updateSeller(id, seller).success(function(seller) {
 					//TODO:
 					centrisNotify.success("sellers.Messages.SaveSucceeded");
-				}.error(function(){
+				}).error(function(){
 					centrisNotify.error("sellers.Messages.SaveFailed");
-				}));
+				});
 			});
 
 		};

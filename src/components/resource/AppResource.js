@@ -122,6 +122,7 @@ function AppResource() {
 		},
 
 		updateSeller: function(id, seller) {
+			console.log("In AppResource UpdateSeller:");
 			if (mockResource.successUpdateSeller) {
 				var current = _.find(mockSellers, function(o){ return o.id === id;});
 				if (current !== null) {
@@ -161,6 +162,7 @@ function AppResource() {
 		},
 
 		addSellerProduct: function addSellerProduct(id, product) {
+			console.log("addSellerProduct");
 			var success = false;
 			if (mockResource.successAddSellerProduct) {
 				var seller = _.find(mockSellers, function(o){ return o.id === id;});
@@ -192,26 +194,33 @@ function AppResource() {
 				return mockHttpPromise(mockResource.successGetSellerProducts, product);
 			}
 			else
-			{
+			{	
 				console.log("We don't find it!");
 				return mockHttpPromise(false, null);
 			}
 		},
 		updateSellerProduct: function updateSellerProduct(id,product){
 			//Update the product we want to update
+			console.log("inside updateSellerProduct");
 			if(mockResource.successUpdateSellerProduct){
-				//Get the product by finding the id
-				var currentProd = _.find(mockProducts, function(o){ return o.id === id;});
+				var currentProd = _.find(mockProducts, function(o){ return o.product.id === id;});
 				//console.log("Inside AppResource updateSellerProduct:");
 				//console.log(currentProd.name);
-				if (currentProd !== null) {
+				if (currentProd !== null) {	
+  				console.log("currentProd id:");
+				console.log(currentProd.id);
+					console.log("We find currentProd");
 					currentProd.name   = product.name;
 					currentProd.price = product.price;
 					currentProd.quantitySold = product.quantitySold;
 					currentProd.quantityInStock = product.quantityInStock;
 					currentProd.imagePath = product.imagePath;
+					console.log(product.name);
+					console.log(product.price);
+					console.log(product.quantitySold);
 				}
 			}
+			console.log("WHY DON'T YOU RETURN SUCCESS");
 			return mockHttpPromise(mockResource.successUpdateSellerProduct, product);
 			
 		}
