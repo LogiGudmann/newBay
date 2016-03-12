@@ -39,14 +39,31 @@ describe("SellersController", function() {
 			expect(SellersController).toBeDefined();
 		});
 
-		it("should check whether AppResource.getSellers has been called with success", function() {
-			expect(mockResource.getSellers).toBeTruthy();
+		it("should ensure that $scope.sellers has some objects", function() {
+			expect(Object.keys($scope.sellers).length).not.toEqual(0);
 		});
 	});
 
 	describe("when resource fails loading a list of sellers", function () {
 		// Hér kæmu önnur beforeEach, sem þar á meðal búa til controller, en eru þá
 		// búin að setja resource breytuna á false áður en controllerinn er smíðaður.
-	})
+		beforeEach(inject(function($controller, $rootScope) {
+
+			mockResource.successLoadSellers = false;
+
+			$scope = $rootScope.$new();
+			SellersController = $controller('SellersController', {
+				$scope: $scope,
+				AppResource: mockResource,
+				centrisNotify: mockCentrisNotify,
+				SellerDlg: mockSellerDlg
+			});
+		}));
+
+		it("should ensure that $scope.sellers has no objects", function() {
+			expect(Object.keys($scope.sellers).length).toEqual(0);
+		});
+	});
+
 
 });

@@ -5,6 +5,7 @@ function SellersController($scope, AppResource, centrisNotify, SellerDlg) {
 	// TODO: load data from AppResource! Also, add other methods, such as to
 	// add/update sellers etc.
 	$scope.sellerdetails = {};
+	$scope.sellers = {};
 	console.log("At least we go here top of sellerscontroller");
 	AppResource.getSellers().success(function(sellers) {
 		$scope.sellers = sellers;
