@@ -125,5 +125,46 @@ describe("SellersController", function() {
 		});
 	});
 
+	describe("when resource succeeds editing a seller", function () {
+		beforeEach(inject(function($controller, $rootScope) {
+			$scope = $rootScope.$new();
+			SellersController = $controller('SellersController', {
+				$scope: $scope,
+				AppResource: mockResource,
+				centrisNotify: mockCentrisNotify,
+				SellerDlg: mockSellerDlg
+			});
+			spyOn(mockCentrisNotify, "success");
+			spyOn(mockCentrisNotify, "error");
+		}));
 
-});
+		it("should ensure that a corresponding centrisNotification has been shown", function() {
+			$scope.onChange(1);
+			expect(mockCentrisNotify.success).toHaveBeenCalledWith("sellers.Messages.SaveSucceeded");
+			expect(mockCentrisNotify.error).not.toHaveBeenCalled();
+		});
+	});
+
+	describe("when resource fails editing a seller", function () {
+		beforeEach(inject(function($controller, $rootScope) {
+			$scope = $rootScope.$new();
+			mockResource.successUpdateSeller = false;
+			SellersController = $controller('SellersController', {
+				$scope: $scope,
+				AppResource: mockResource,
+				centrisNotify: mockCentrisNotify,
+				SellerDlg: mockSellerDlg
+			});
+			spyOn(mockCentrisNotify, "success");
+			spyOn(mockCentrisNotify, "error");
+		}));
+
+		it("should ensure that a corresponding centrisNotification has been shown", function() {
+			$scope.onChange(1);
+			expect(mockCentrisNotify.error).toHaveBeenCalledWith("sellers.Messages.SaveFailed");
+			expect(mockCentrisNotify.success).not.toHaveBeenCalled();
+		});
+	});
+
+
+})
