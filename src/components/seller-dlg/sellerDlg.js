@@ -11,7 +11,6 @@ function SellerDlg($uibModal){
 					seller:seller
 				}
 			});
-			console.log("we gohere sllerdlg.js");
 			return modalInstance.result;
 		}
 	};

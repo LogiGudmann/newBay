@@ -73,6 +73,7 @@ function AppResource() {
 	// A helper object which emulates the return value
 	// from the $http service in Angular.
 	var mockHttpPromise = function(condition, data) {
+		console.log("CONDITION: " + condition);
 		return {
 			success: function(fn) {
 				if (condition) {
