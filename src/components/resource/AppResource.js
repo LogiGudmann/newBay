@@ -157,7 +157,6 @@ function AppResource() {
 					products.push(mockProducts[i].product);
 				}
 			}
-
 			return mockHttpPromise(mockResource.successGetSellerProducts, products);
 		},
 
@@ -190,12 +189,11 @@ function AppResource() {
 			}
 			if(product)
 			{
-				console.log("We Find it!");
+
 				return mockHttpPromise(mockResource.successGetSellerProducts, product);
 			}
 			else
 			{	
-				console.log("We don't find it!");
 				return mockHttpPromise(false, null);
 			}
 		},
@@ -207,20 +205,14 @@ function AppResource() {
 				//console.log("Inside AppResource updateSellerProduct:");
 				//console.log(currentProd.name);
 				if (currentProd !== null) {	
-  				console.log("currentProd id:");
-				console.log(currentProd.id);
-					console.log("We find currentProd");
 					currentProd.name   = product.name;
 					currentProd.price = product.price;
 					currentProd.quantitySold = product.quantitySold;
 					currentProd.quantityInStock = product.quantityInStock;
 					currentProd.imagePath = product.imagePath;
-					console.log(product.name);
-					console.log(product.price);
-					console.log(product.quantitySold);
+
 				}
 			}
-			console.log("WHY DON'T YOU RETURN SUCCESS");
 			return mockHttpPromise(mockResource.successUpdateSellerProduct, product);
 			
 		}

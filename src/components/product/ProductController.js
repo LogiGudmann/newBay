@@ -9,7 +9,7 @@ angular.module("project3App").controller("ProductController",
 			//console.log($scope.sellerdetails.name);
 			AppResource.getSellerProducts(id).success(function(sellerproducts){
 					$scope.sellerproducts = sellerproducts;
-			});			
+			});
 	$scope.onChange = function onChange(id){
 		//We need to create UpdateProduct function in appresource
 		//As $scope.prouductdetails returns us id: sellerid and product, which is the product we want
@@ -45,11 +45,11 @@ angular.module("project3App").controller("ProductController",
 			centrisNotify.success("sellerdetails.Messages.SaveSucceeded");
 		}).error(function(){
 			//TODO:
-			//console.log("We go here error");	
+			//console.log("We go here error");
 			centrisNotify.error("sellers.Messages.SaveFailed");
 		});
 		});
 	};
-	
+
 
 	});
