@@ -19,8 +19,9 @@
 </div>
 <div ng-controller="SellerdetailsController">	
 				<div ng-repeat="s in sellerproducts" >
-				<div productDetailsDir >
+				<div product-details-dir id="{{s.id}}" name="{{s.name}}" price="{{s.price}}"  imagepath="{{s.imagePath}}">
 				</div>
+				<button class="btn btn-primary" type="button" ng-click="onChange(s.id)"><span translate="sellers.Edit"></span></button>
 				</div>
 </div>
 
@@ -28,3 +29,6 @@
 <span translate="language.Back"></span>
 </a>
 </div>
+
+<!--quantitysold="{{s.quantitySold}}"  quantityinstock="{{s.quantityInStock}}"-->
+<!--Hafa rautt sem stendur uppselt ef quantitySTock er 0-->

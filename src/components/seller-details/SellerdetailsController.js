@@ -23,27 +23,32 @@ angular.module("project3App").controller("SellerdetailsController",
 			$scope.product = $scope.productdetails.product;
 			var product = $scope.productdetails.product;
 	$scope.onChange = function onChange(id){
+		console.log("Id of product");
+		console.log(id);
 		//We need to create UpdateProduct function in appresource
 		//As $scope.prouductdetails returns us id: sellerid and product, which is the product we want
 		//We assign product directly to that as we don't need the sellerid
 		//The function addproduct assigns the sellerid for us
-
+		console.log(product.name);
 		productDlg.show(product).then(function(product) {
-			AppResource.updateSellerProduct(id, product.product).success(function(product) {
+			AppResource.updateSellerProduct(id, product).success(function(product) {
 				centrisNotify.success("sellerdetails.Messages.SaveSucceeded");
 			}.error(function(){
 				centrisNotify.error("sellerdetails.Messages.SaveFailed");
 			}));
 		});
 	};
-
+	console.log("Array length");
+	console.log($scope.sellerproducts.length);
 	$scope.onAddProduct = function onAddProduct(){
 		productDlg.show().then(function(productdetails) {
 			AppResource.addSellerProduct(id, productdetails).success(function(productdetails) {
-			centrisNotify.success("sellerdetails.Messages.SaveSucceeded");
 			AppResource.getSellerProducts(id).success(function(sellerproducts){
 					$scope.sellerproducts = sellerproducts;
+					console.log("Array length after");
+					console.log($scope.sellerproducts.length);
 			});
+			centrisNotify.success("sellerdetails.Messages.SaveSucceeded");
 		}).error(function(){
 			//TODO:
 			//console.log("We go here error");	

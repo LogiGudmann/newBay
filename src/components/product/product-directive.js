@@ -7,9 +7,9 @@ return{
 		id: "@",
 		name: "@",
 		price: "@",
-		quantitySold: "@",
-		quantityInStock:"@",
-		imagePath:"@",
+		quantitysold: "@",
+		quantityinstock:"@",
+		imagepath:"@"
 
 	},
 	templateUrl: "components/product/product-dir.html"

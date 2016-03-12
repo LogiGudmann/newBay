@@ -10,6 +10,7 @@
 		"Price":					 "Verð",
 		"QuantitySold":				 "Fjöldi seldra",
 		"QuantityInStock":			 "Fjöldi til á lager",
+		"PriceZero":				 "Verð getur ekki verið undir núll",
 		"Messages" : {
 			"NameMissing": 		 	 "Vantar nafn!",
 			"CategoryMissing":		 "Vantar flokk!",

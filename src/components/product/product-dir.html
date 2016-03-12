@@ -1,14 +1,11 @@
 <div ng-controller="SellerdetailsController">
-<span>{{product.id}}</span>
-<img src="{{product.imagePath}}" height="100" width="100">
+<div>
+<img src="{{imagepath}}" height="100" width="100">
+</div>
+<span>{{name}}</span>
 
-<span>{{product.name}}</span>
+<span>{{price}}kr</span>
 
-<span>{{product.price}} kr </span>
-
-<span>{{product.quantityInStock}}</span>
-<span>{{product.quantitySold}}</span>
-
-<button class="btn btn-primary" type="button" ng-click="onChange(s.id)"><span translate="sellers.Edit"></span></button>
-
+<span>{{quantityinstock}}</span>
+<span>{{quantitysold}}</span>
 </div>
