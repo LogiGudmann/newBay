@@ -4,8 +4,11 @@
 		function SellersController($scope, AppResource, centrisNotify, SellerDlg) {
 		// TODO: load data from AppResource! Also, add other methods, such as to
 		// add/update sellers etc.
+	
 		$scope.sellerdetails = {};
 		$scope.sellers = {};
+		$scope.sortBy = 'name'; /* Default sorting by name, not category*/
+		$scope.ASCENDING = false;
 		AppResource.getSellers().success(function(sellers) {
 			$scope.sellers = sellers;
 		});
