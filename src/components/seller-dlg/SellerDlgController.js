@@ -4,7 +4,7 @@ angular.module("project3App").controller("SellerDlgController",
 function SellerDlgController($scope,centrisNotify, seller){
 
 	$scope.seller = seller;
-	//Aligne up
+	//Align up
 	$scope.onOk = function onOk() {
 		//TODO: VAlidation
 		console.log("we go here");
