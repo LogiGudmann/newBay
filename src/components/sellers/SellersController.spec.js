@@ -39,6 +39,11 @@ describe("SellersController", function() {
 			expect(SellersController).toBeDefined();
 		});
 
+		it ("should have the functions $scope.onChange and $scope.onAddSeller defined", function() {
+			expect($scope.onChange).toBeDefined();
+			expect($scope.onAddSeller).toBeDefined();
+		});
+
 		it("should ensure that $scope.sellers has some objects", function() {
 			expect(Object.keys($scope.sellers).length).not.toEqual(0);
 		});
@@ -64,6 +69,24 @@ describe("SellersController", function() {
 			expect(Object.keys($scope.sellers).length).toEqual(0);
 		});
 	});
+
+	// describe("when resource succeeds loading seller details", function () {
+	// 	// Hér kæmu önnur beforeEach, sem þar á meðal búa til controller, en eru þá
+	// 	// búin að setja resource breytuna á false áður en controllerinn er smíðaður.
+	// 	beforeEach(inject(function($controller, $rootScope) {
+	// 		$scope = $rootScope.$new();
+	// 		SellersController = $controller('SellersController', {
+	// 			$scope: $scope,
+	// 			AppResource: mockResource,
+	// 			centrisNotify: mockCentrisNotify,
+	// 			SellerDlg: mockSellerDlg
+	// 		});
+	// 	}));
+
+	// 	it("should ensure that $scope.sellerdetails has some objects", function() {
+	// 		$scope.onAddSeller(1);
+	// 	});
+	// });
 
 
 });
