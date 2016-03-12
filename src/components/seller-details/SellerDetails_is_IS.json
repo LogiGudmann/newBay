@@ -19,6 +19,10 @@
 			"QuantityInStock":	     "Vantar fjölda til á lager",
 			"ImagePath":			 "Vantar url á mynd",
 			"LoadFailed":            "Ekki tókst að sækja lista yfir seljendur",
+			"EditSucceededProd":				"Það tókst að breyta vörunni",
+			"EditSucceeded":				"Það tókst að breyta seljandanum",
+			"SaveSucceededProd":     "Vörunni hefur verið bætt við",
+			"SaveFailedProd":            "Því miður tókst ekki að bæta við vöru",
 			"SaveSucceeded":         "Nýjum seljanda hefur verið bætt við",
 			"SaveFailed":            "Því miður tókst ekki að bæta við nýjum seljanda"
 		}

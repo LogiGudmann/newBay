@@ -20,8 +20,12 @@
 			"QuantityInStock":	     "Missing QuantityInStock",
 			"ImagePath":			 "Missing image path",
 			"LoadFailed":            "Failed to load the list of sellers",
+			"EditSucceededProd":				"The product has been edit successfully",
+			"EditSucceeded":				"The seller has been edit successfully",
+			"SaveSucceededProd":     "The product has been added successfully",
 			"SaveSucceeded":         "The seller has been added successfully",
-			"SaveFailed":            "Unfortunately we could not add a new seller"
+			"SaveFailed":            "Unfortunately we could not add a new seller",
+			"SaveFailedProd":            "Unfortunately we could not add a new product"
 		}
 	}
 }

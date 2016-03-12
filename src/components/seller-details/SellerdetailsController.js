@@ -9,3 +9,4 @@ angular.module("project3App").controller("SellerdetailsController",
 			$scope.sellerdetails = sellerdetails;
 		});
 	});
+

@@ -40,7 +40,7 @@ function productDlgController($scope,centrisNotify, productdetails){
 			return;
 		}*/
 		//validates if the image starts with https or http
-		else if($scope.productdetails.imagePath === undefined || $scope.productdetails.imagePath.length === 0)	
+		else if($scope.productdetails.imagePath === undefined || $scope.productdetails.imagePath.length === 0)
 		{
 			//Validation message
 			centrisNotify.error("sellerdetails.Messages.ImagePath");
