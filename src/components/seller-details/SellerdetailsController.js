@@ -1,7 +1,7 @@
 "use strict";
 
 angular.module("project3App").controller("SellerdetailsController",
-	function SellerdetailsController($scope,$routeParams,AppResource,centrisNotify,SellerDetailsDlg) {
+	function SellerdetailsController($scope,$routeParams,AppResource,centrisNotify,productDlg) {
 			$scope.id = $routeParams.id;
 			$scope.sellerdetails = {};
 			$scope.sellerproducts = [];
@@ -16,18 +16,19 @@ angular.module("project3App").controller("SellerdetailsController",
 			AppResource.getSellerProducts(id).success(function(sellerproducts){
 					$scope.sellerproducts = sellerproducts;
 			});
-
+			AppResource.getProductDetails(id).success(function(productdetails){
+				console.log("We finally go here!!!!(productdetails)");
+				$scope.productdetails = productdetails;
+				});
+			$scope.product = $scope.productdetails.product;
+			var product = $scope.productdetails.product;
 	$scope.onChange = function onChange(id){
 		//We need to create UpdateProduct function in appresource
-		AppResource.getProductDetails(id).success(function(productdetails){
-					console.log("We finally go here!!!!(productdetails)");
-					$scope.productdetails = productdetails;
-				});
 		//As $scope.prouductdetails returns us id: sellerid and product, which is the product we want
 		//We assign product directly to that as we don't need the sellerid
 		//The function addproduct assigns the sellerid for us
-		var product = $scope.productdetails.product;
-		SellerDetailsDlg.show(product).then(function(product) {
+
+		productDlg.show(product).then(function(product) {
 			AppResource.updateSellerProduct(id, product.product).success(function(product) {
 				centrisNotify.success("sellerdetails.Messages.SaveSucceeded");
 			}.error(function(){
@@ -37,7 +38,7 @@ angular.module("project3App").controller("SellerdetailsController",
 	};
 
 	$scope.onAddProduct = function onAddProduct(){
-		SellerDetailsDlg.show().then(function(productdetails) {
+		productDlg.show().then(function(productdetails) {
 			AppResource.addSellerProduct(id, productdetails).success(function(productdetails) {
 			centrisNotify.success("sellerdetails.Messages.SaveSucceeded");
 			AppResource.getSellerProducts(id).success(function(sellerproducts){

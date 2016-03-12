@@ -17,26 +17,10 @@
 <div>
 <h3 translate="sellerdetails.AllProd"></h3>
 </div>
-<div class="outlined">	
-				<div class="highlight" ng-repeat="s in sellerproducts" >
-
-				{{s.id}}
-				<img class="thumbnail" src="{{s.imagePath}}" height="80px" width="100px">
-				
-				<span translate="sellerdetails.Name"></span>
-				{{s.name}}
-				<span translate="sellerdetails.Price"></span>
-				{{s.price}}
-				<button class="btn btn-primary" type="button" ng-click="onChange(s.id)"><span translate="sellers.Edit"></span></button>
-				<!--
-				Þurfum í rauninni ekki fyrren í top 10
-				<span translate="sellerdetails.QuantitySold"></span>
-				{{s.quantitySold}}
-				<br>
-				<span translate="sellerdetails.QuantityInStock"></span>
-				{{s.quantityInStock}}-->
-				<br>
-				
+<div ng-controller="SellerdetailsController">	
+				<div ng-repeat="s in sellerproducts" >
+				<div productDetailsDir >
+				</div>
 				</div>
 </div>
 

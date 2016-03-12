@@ -1,7 +1,7 @@
 "use strict";
 
-angular.module("project3App").controller("SellerDetailsDlgController",
-function SellerDetailsDlgController($scope,centrisNotify, productdetails){
+angular.module("project3App").controller("productDlgController",
+function productDlgController($scope,centrisNotify, productdetails){
 
 	$scope.productdetails = productdetails;
 
