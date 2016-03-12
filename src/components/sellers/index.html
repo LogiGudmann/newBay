@@ -24,11 +24,19 @@
 					<thead class="tableHeadStyle">
 						<tr>
 							<th>
-								<!--Span used, to be able to put inputs in th-->
-								<span  translate="sellers.Name"/>
+								<a class="noHighlight" ng-click="sortBy = 'name'; ASCENDING = !ASCENDING">
+									<span ng-show="sortBy == 'name' && !ASCENDING" class="glyphicon glyphicon-triangle-bottom"></span>
+									<span ng-show="sortBy == 'name' && ASCENDING"  class="glyphicon glyphicon-triangle-top"></span>
+									<span  translate="sellers.Name"/>
+								</a>								
 							</th>
 							<th>
-								<span  translate="sellers.Category"/>
+								<a class="noHighlight" ng-click="sortBy = 'category'; ASCENDING = !ASCENDING">
+									<span ng-show="sortBy == 'category' && !ASCENDING" class="glyphicon glyphicon-triangle-bottom" ></span>
+									<span ng-show="sortBy == 'category' && ASCENDING"  class="glyphicon glyphicon-triangle-top"></span>
+									<span translate="sellers.Category"/>
+								</a>
+								
 							</th>
 							<th>
 								<!-- <span  translate="sellers.Photo"/> -->
@@ -39,7 +47,7 @@
 						</tr>
 					</thead>
 					<tbody>
-						<tr ng-repeat="s in sellers" class="sellerRow">
+						<tr ng-repeat="s in sellers | orderBy:sortBy:ASCENDING" class="sellerRow">
 							<td class="rowName">
 								<a ng-href="#/seller/{{s.id}}">{{s.name}}</a>
 							</td>
