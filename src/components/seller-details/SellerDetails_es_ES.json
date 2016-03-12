@@ -19,8 +19,12 @@
 			"QuantityInStock":	     "Falta cantidad en stock!",
 			"ImagePath":			 "Falta ruta de la imagen",
 			"LoadFailed":            "No se pudo cargar la lista de los vendedores",
+			"EditSucceededProd":				"El producto ha sido editado con éxito",
+			"EditSucceeded":				"El vendedor ha sido editado con éxito",
+			"SaveSucceededProd":     "El producto se ha agregado con éxito",
 			"SaveSucceeded":         "El vendedor ha sido agregado con exito",
-			"SaveFailed":            "Por desgracia, no hemos podido añadir un nuevo vendedor"
+			"SaveFailed":            "Por desgracia, no hemos podido añadir un nuevo vendedor",
+			"SaveFailedProd":            "Lamentablemente no podríamos añadir un nuevo producto"
 		}
 	}
 }

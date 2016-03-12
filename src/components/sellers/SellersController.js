@@ -4,7 +4,7 @@
 		function SellersController($scope, AppResource, centrisNotify, SellerDlg) {
 		// TODO: load data from AppResource! Also, add other methods, such as to
 		// add/update sellers etc.
-	
+
 		$scope.sellerdetails = {};
 		$scope.sellers = {};
 		$scope.sortBy = 'name'; /* Default sorting by name, not category*/
@@ -35,14 +35,14 @@
 			SellerDlg.show().then(function(seller) {
 				AppResource.addSeller(seller).success(function(seller) {
 					console.log("we go heres sellers");
-					var newSeller = seller;
+				//	var newSeller = seller;
 					console.log(seller.id);
 				//Took out apptitle
 				centrisNotify.success("sellers.Messages.SaveSucceeded");
 
 			}).error(function(){
 				//TODO:
-				console.log("We go here error");	
+				console.log("We go here error");
 				centrisNotify.error("sellers.Messages.SaveFailed");
 			});
 		});

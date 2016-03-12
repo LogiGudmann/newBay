@@ -192,7 +192,7 @@ function AppResource() {
 				return mockHttpPromise(mockResource.successGetSellerProducts, product);
 			}
 			else
-			{	
+			{
 				return mockHttpPromise(false, null);
 			}
 		},
@@ -203,7 +203,7 @@ function AppResource() {
 				var currentProd = _.find(mockProducts, function(o){ return o.product.id === id;});
 				//console.log("Inside AppResource updateSellerProduct:");
 				//console.log(currentProd.name);
-				if (currentProd !== null) {	
+				if (currentProd !== null) {
 					currentProd.name   = product.name;
 					currentProd.price = product.price;
 					currentProd.quantitySold = product.quantitySold;
@@ -213,7 +213,7 @@ function AppResource() {
 				}
 			}
 			return mockHttpPromise(mockResource.successUpdateSellerProduct, product);
-			
+
 		}
 
 	};
