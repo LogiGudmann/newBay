@@ -1,14 +1,21 @@
 "use strict";
 
 angular.module("project3App").controller("ProductController",
-	function ProductController($scope,$routeParams,AppResource,centrisNotify,productDlg) {
+	function ProductController($scope,$routeParams,AppResource,centrisNotify,productDlg,$route) {
 		$scope.id = $routeParams.id;
 		$scope.sellerproducts = [];
 		$scope.productDetails = {};
+		$scope.alert = {};
 		$scope.showTab = 'all';
 		var id = parseInt($scope.id);
 			AppResource.getSellerProducts(id).success(function(sellerproducts){
 				$scope.sellerproducts = sellerproducts;
+				console.log($scope.sellerproducts);
+				if($scope.sellerproducts.length === 0)
+				{
+					console.log("The user has no product");
+					$scope.alert = 'The seller has no product!';
+				}
 			});
 			$scope.onChange = function onChange(id){
 			//We need to create UpdateProduct function in appresource
@@ -30,10 +37,13 @@ angular.module("project3App").controller("ProductController",
 
 		$scope.onAddProduct = function onAddProduct(){
 			productDlg.show().then(function(productdetails) {
+				productdetails.quantitySold = 0;
+				productdetails.quantityInStock = 0;
 				AppResource.addSellerProduct(id, productdetails).success(function(productdetails) {
 					AppResource.getSellerProducts(id).success(function(productdetails){
 						$scope.sellerproducts = productdetails;
 					});
+					$route.reload();
 					centrisNotify.success("sellerdetails.Messages.SaveSucceededProd");
 				}).error(function(){
 			centrisNotify.error("sellers.Messages.SaveFailedProd");

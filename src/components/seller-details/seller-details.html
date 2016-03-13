@@ -11,7 +11,7 @@
 					<h4>{{sellerdetails.name}}</h4>
 
 					<h2 translate="sellerdetails.Category"></h2>
-					<h4>{{sellerdetails.category}}</h4>			
+					<h4>{{sellerdetails.category}}</h4>
 				</span>
 				<span class="userPhoto">
 					<img class="userImage" src="{{sellerdetails.imagePath}}">
@@ -63,6 +63,7 @@
 						</a>
 					</li>
 				</ul>
+				<uib-alert type="danger" ng-show='sellerproducts.length == 0'>{{alert}}</uib-alert>
 			</div>
 		</div>
 	</div>

@@ -1,8 +1,3 @@
-.userImage {
-	position:relative;
-	max-height: 150px;
-}
-
 .productButton {
 	float: right;
 	margin-top:0 !important;
@@ -24,6 +19,11 @@
 .userPhoto {
 	float:left;
 	margin:20px;
+	.userImage {
+		position:relative;
+		max-height: 150px;
+		border-radius:12px;
+	}
 }
 
 .headerBanner {
@@ -205,12 +205,12 @@
 .itemGridPhoto {
 	display: block;
 	overflow:hidden;
+	margin:0 auto;
 	transition: transform 0.3s;
 	max-height: 200px;
-	max-width: 15vh;
+	max-width: 50%;
 	height:auto;
 	width:auto;
-	margin-left:25%;
 }
 .content {
 	background-color: #ddd;
