@@ -1,10 +1,10 @@
 
 <!--Didn't include loading message from lecture-->
-<div>	
+<div>
 	<div class="headerContent">
 		<div id="large-header" class="large-header">
 			<header>
-				<h1 class="main-title">NewBay</h1>	
+				<h1 class="main-title">NewBay</h1>
 			</header>
 		</div>
 	</div>
@@ -28,7 +28,7 @@
 									<span ng-show="sortBy == 'name' && !ASCENDING" class="glyphicon glyphicon-triangle-bottom"></span>
 									<span ng-show="sortBy == 'name' && ASCENDING"  class="glyphicon glyphicon-triangle-top"></span>
 									<span  translate="sellers.Name"/>
-								</a>								
+								</a>
 							</th>
 							<th>
 								<a class="noHighlight" ng-click="sortBy = 'category'; ASCENDING = !ASCENDING">
@@ -36,7 +36,7 @@
 									<span ng-show="sortBy == 'category' && ASCENDING"  class="glyphicon glyphicon-triangle-top"></span>
 									<span translate="sellers.Category"/>
 								</a>
-								
+
 							</th>
 							<th>
 								<!-- <span  translate="sellers.Photo"/> -->
@@ -58,7 +58,7 @@
 								<img class="thumbnail" src="{{s.imagePath}}">
 							</td>
 							<td >
-								<button class="fancyButton glyphicon glyphicon-cog" type="button" ng-click="onChange(s.id)">
+								<button class="fancyButton glyphicon glyphicon-cog" type="button" ng-click=" onChange(s.id)">
 									<span translate="sellers.Edit">
 									</span>
 								</button>

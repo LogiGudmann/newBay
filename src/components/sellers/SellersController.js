@@ -7,6 +7,8 @@
 
 		$scope.sellerdetails = {};
 		$scope.sellers = {};
+		$scope.Editing = false;
+
 		$scope.sortBy = 'name'; /* Default sorting by name, not category*/
 		$scope.ASCENDING = false;
 		AppResource.getSellers().success(function(sellers) {
@@ -14,6 +16,7 @@
 		});
 
 		$scope.onChange = function onChange(id){
+			$scope.Editing = true;
 			AppResource.getSellerDetails(id).success(function(sellerdetails){
 				$scope.sellerdetails = sellerdetails;
 			});
