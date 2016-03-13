@@ -1,33 +1,44 @@
 <div>
-<!-- Need to get sellers info and put up tables-->
-<div class="header">
-			<img src="{{sellerdetails.imagePath}}" height="250" width="200">
-			<h2 class="header" translate="sellerdetails.Name"></h2>
-			{{sellerdetails.name}}
+	<!-- Need to get sellers info and put up tables-->
+	<div class="header">
+		<img src="{{sellerdetails.imagePath}}" height="250" width="200">
+		<h2 class="header" translate="sellerdetails.Name"></h2>
+		{{sellerdetails.name}}
 
-			<h2 class="header" translate="sellerdetails.Category"></h2>
-			{{sellerdetails.category}}
-			<!-- TODO: Put name of seller here-->
-</div>
-<div ng-controller="ProductController"   class="Sellers">
+		<h2 class="header" translate="sellerdetails.Category"></h2>
+		{{sellerdetails.category}}
+		<!-- TODO: Put name of seller here-->
+	</div>
+	<div ng-controller="ProductController" class="Sellers">
 		<button class="btn btn-primary addProductBtn" ng-click="onAddProduct()">
 			<i class="fa fa-plus"/>
 			<span translate="sellerdetails.Add"/>
 		</button>
-<div>
-<h3 translate="sellerdetails.AllProd"></h3>
-</div>
-<div ng-controller="ProductController">
-				<div ng-repeat="s in sellerproducts" >
-				<div product-details-dir id="{{s.id}}" name="{{s.name}}" price="{{s.price}}"  imagepath="{{s.imagePath}}">
-				</div>
-				<button class="btn btn-primary" type="button" ng-click="onChange(s.id)"><span translate="sellers.Edit"></span></button>
-				</div>
-</div>
+	</div>
+	<div ng-controller="ProductController">
+		<a class="noHighlight" ng-click="showTab = 'all'">
+			<h3 translate="sellerdetails.AllProd"></h3>
+		</a>
+		<a class="noHighlight" ng-click="showTab = 'top'">
+			<h3 translate="sellerdetails.TopTen"></h3>
+		</a>
+		<div ng-show="showTab == 'all'" ng-repeat="s in sellerproducts" >
+			<div product-details-dir id="{{s.id}}" name="{{s.name}}" price="{{s.price}}"  imagepath="{{s.imagePath}}">
+			</div>
+			<button class="btn btn-primary" type="button" ng-click="onChange(s.id)"><span translate="sellers.Edit"></span></button>
+		</div>
 
-<a href="#/">
-<span translate="language.Back"></span>
-</a>
+
+		<div ng-show="showTab == 'top'" ng-repeat="s in sellerproducts | orderBy: '-quantitySold' | limitTo: 10 " >
+			<div top-dir id="{{s.id}}" name="{{s.name}}" price="{{s.price}}"  imagepath="{{s.imagePath}}">
+			</div>
+			<button class="btn btn-primary" type="button" ng-click="onChange(s.id)"><span translate="sellers.Edit"></span></button>
+		</div>            
+
+		<a href="#/">
+			<span translate="language.Back"></span>
+		</a>
+	</div>
 </div>
 
 <!--quantitysold="{{s.quantitySold}}"  quantityinstock="{{s.quantityInStock}}"-->

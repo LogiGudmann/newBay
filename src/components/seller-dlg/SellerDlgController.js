@@ -4,10 +4,11 @@ angular.module("project3App").controller("SellerDlgController",
 function SellerDlgController($scope,centrisNotify, seller){
 
 	$scope.seller = seller;
-
-	var oldSellerName = seller.name;
-	var oldSellerCategory = seller.category;
-	var oldSellerImagepath = seller.imagePath;
+	if(seller !== undefined){
+		var oldSellerName = seller.name;
+		var oldSellerCategory = seller.category;
+		var oldSellerImagepath = seller.imagePath;
+	}
 	//Align up
 	$scope.onOk = function onOk() {
 		console.log("we go here");
@@ -42,26 +43,26 @@ function SellerDlgController($scope,centrisNotify, seller){
 
 
 	$scope.onCancel = function onCancel(){
-
-		if($scope.seller.name !== oldSellerName)
-		{
-				console.log("Success name doesn't match");
-				//The name doesn't match so we revert the changes
-				$scope.seller.name = oldSellerName;
+		if(seller !== undefined)
+			if($scope.seller.name !== oldSellerName)
+			{
+					console.log("Success name doesn't match");
+					//The name doesn't match so we revert the changes
+					$scope.seller.name = oldSellerName;
+			}
+		  	if($scope.seller.category !== oldSellerCategory)
+			{
+					console.log("Success name doesn't match");
+					//The name doesn't match so we revert the changes
+					$scope.seller.category = oldSellerCategory;
+			}
+			if($scope.seller.imagePath !== oldSellerImagepath)
+			{
+					console.log("Success name doesn't match");
+					//The name doesn't match so we revert the changes
+					$scope.seller.imagePath = oldSellerImagepath;
+			}
 		}
-	  if($scope.seller.category !== oldSellerCategory)
-		{
-				console.log("Success name doesn't match");
-				//The name doesn't match so we revert the changes
-				$scope.seller.category = oldSellerCategory;
-		}
-		if($scope.seller.imagePath !== oldSellerImagepath)
-		{
-				console.log("Success name doesn't match");
-				//The name doesn't match so we revert the changes
-				$scope.seller.imagePath = oldSellerImagepath;
-		}
-
 		$scope.$dismiss();
 	};
 });
