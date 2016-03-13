@@ -1,43 +1,68 @@
 <div>
 	<!-- Need to get sellers info and put up tables-->
-	<div class="header">
-		<img src="{{sellerdetails.imagePath}}" height="250" width="200">
-		<h2 class="header" translate="sellerdetails.Name"></h2>
-		{{sellerdetails.name}}
+	<div class="headerBanner">
+		<span ng-controller="ProductController" class="Sellers">
+			<button class="fancyButton productButton glyphicon glyphicon-plus-sign" ng-click="onAddProduct()">
+				<i class="fa fa-plus"/>
+				<span translate="sellerdetails.Add"/>
+			</button>
+		</span>
+		<div class="blur">
+			<div class="userInfo" >
+				<span class="userText">
+					<h2 translate="sellerdetails.Name"></h2>
+					<h4>{{sellerdetails.name}}</h4>
 
-		<h2 class="header" translate="sellerdetails.Category"></h2>
-		{{sellerdetails.category}}
-		<!-- TODO: Put name of seller here-->
-	</div>
-	<div ng-controller="ProductController" class="Sellers">
-		<button class="btn btn-primary addProductBtn" ng-click="onAddProduct()">
-			<i class="fa fa-plus"/>
-			<span translate="sellerdetails.Add"/>
-		</button>
-	</div>
-	<div ng-controller="ProductController">
-		<a class="noHighlight" ng-click="showTab = 'all'">
-			<h3 translate="sellerdetails.AllProd"></h3>
-		</a>
-		<a class="noHighlight" ng-click="showTab = 'top'">
-			<h3 translate="sellerdetails.TopTen"></h3>
-		</a>
-		<div ng-show="showTab == 'all'" ng-repeat="s in sellerproducts" >
-			<div product-details-dir id="{{s.id}}" name="{{s.name}}" price="{{s.price}}"  imagepath="{{s.imagePath}}">
+					<h2 translate="sellerdetails.Category"></h2>
+					<h4>{{sellerdetails.category}}</h4>			
+				</span>
+				<span class="userPhoto">
+					<img class="userImage" src="{{sellerdetails.imagePath}}">
+				</span>
 			</div>
-			<button class="btn btn-primary" type="button" ng-click="onChange(s.id)"><span translate="sellers.Edit"></span></button>
+			<!-- TODO: Put name of seller here-->
 		</div>
-
-
-		<div ng-show="showTab == 'top'" ng-repeat="s in sellerproducts | orderBy: '-quantitySold' | limitTo: 10 " >
-			<div top-dir id="{{s.id}}" name="{{s.name}}" price="{{s.price}}"  imagepath="{{s.imagePath}}">
+	</div>
+	<div class="content">
+		<div class="container" ng-controller="ProductController">
+			<div class="tabButtonDiv">
+				<a class="noHighlight" ng-click="showTab = 'all'">
+					<button class="tabButtons" translate="sellerdetails.AllProd"></button>
+				</a>
+				<a class="noHighlight" ng-click="showTab = 'top'">
+					<button class="tabButtons" translate="sellerdetails.TopTen"></button>
+				</a>
 			</div>
-			<button class="btn btn-primary" type="button" ng-click="onChange(s.id)"><span translate="sellers.Edit"></span></button>
-		</div>            
-
-		<a href="#/">
-			<span translate="language.Back"></span>
-		</a>
+			<div class="productDiv">
+				<h2 ng-show="showTab == 'all'" translate="sellerdetails.AllProd"></h2>
+				<h2 ng-show="showTab == 'top'"translate="sellerdetails.TopTen"></h2>
+				<ul class="itemGrid">
+					<li ng-show="showTab == 'all'" ng-repeat="s in sellerproducts">
+						<a ng-click="onChange(s.id)">
+							<span>
+								<img ng-src="{{s.imagePath}}" class="itemGridPhoto"/>
+								<img src="http://findicons.com/files/icons/76/icandy_junior/128/pics_1.png" ng-if="s.imagePath == ''" class="itemGridPhoto"/>
+							</span>
+							<h3 class="itemGridTitle" >{{s.name}}</h3>
+							<span class="itemGridPrice">{{s.price}}</span>
+						</a>
+					</li>
+					<li ng-show="showTab == 'top'" ng-repeat="s in sellerproducts | orderBy: '-quantitySold' | limitTo: 10 ">
+						<a ng-click="onChange(s.id)">
+							<span >
+								<img ng-src="{{s.imagePath}}" class="itemGridPhoto" />
+								<img src="http://findicons.com/files/icons/76/icandy_junior/128/pics_1.png" ng-if="s.imagePath == ''" class="itemGridPhoto"/>
+							</span>
+							<h3 class="itemGridTitle">{{s.name}}</h3>
+							<span class="itemGridPrice">{{s.price}}</span>
+						</a>
+					</li>
+				</ul>
+				<a href="#/">
+					<span translate="language.Back"></span>
+				</a>
+			</div>
+		</div>
 	</div>
 </div>
 

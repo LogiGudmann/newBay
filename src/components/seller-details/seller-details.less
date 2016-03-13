@@ -1,14 +1,202 @@
-.outlined div {
-  display: grid;
-  display: inline-block;
-  width: 200px;
-  height: 180px;
+.userImage{
+	position:relative;
+	max-height: 150px;
+
+}
+.productButton{
+	margin-top:20px !important;
+}
+.userText {
+	float:left;
+	margin-left:20px;
+	color: #eee;
+	border:none;
+	outline: none;
+	border-radius:3px;
+}
+.userPhoto {
+	float:left;
+	margin:20px;
+
+}
+.headerBanner {
+	position: relative;
+	width: 100%;
+	min-height: 40vh;
+	height:40vh;
+	background: #333;
+	overflow: hidden;
+	z-index: 10;
+	background: url('/img/userBanner.jpg') no-repeat bottom fixed;
+	background-size: cover;
+
+	.userInfo{
+		position: fixed;
+		color:#eee;
+		position:relative;
+		float:left;
+		margin: 20px;
+		top:0;left:0;right:0;bottom:0;
+		opacity: 1;
+		z-index: 5;
+
+
+	}
+	.blur{
+		box-shadow: 0 0 10px .1px;
+		width:auto;
+		min-height:200px;
+		height:30vh;
+		position:relative;
+		margin: 20px;
+		top:0;left:0;right:0;bottom:0;
+		float:left;
+		margin: 20px;
+		background-color:#aaa;
+		border-radius: 12px;
+		overflow:hidden;
+		z-index: 1;
+		&:after{
+			content: "";
+			height: 100vh;
+			width: auto;
+			display: block;
+			background: url('/img/blur2.jpg') bottom left;
+			-webkit-filter: blur(10px);
+
+		}
+	}
+}
+.tabButtons {
+	padding: 10px 40px;
+	border-radius: 10px;
+	font-family: sans-serif;
+	font-size: 25px;
+	color: #FFF;
+	text-decoration: none;  
+	background-color: #3498DB;
+	border-bottom: 5px solid #2981C9;
+	text-shadow: 0px -2px #2981C9;
+	transition: all 0.1s;
+	&:hover, 
+	&:focus {
+		text-decoration: none;
+		color: #fff;
+	}
+
+	&:active {
+		transform: translate(0px,5px);
+		border-bottom: 1px solid;
+	}
+}
+.tabButtonDiv{
+	margin:20px;
+}
+.productDiv{
+	margin:20px;
 }
 
-.outlined .highlight {
-  outline: 1px solid black;
-  background: transparent;
+
+.itemGrid {
+	list-style: none;
+	margin: 0;
+	padding: 0 0 50px 0;
+	&:before {
+		content: "";
+		display: table;
+	}
+	&:after {
+		clear: both;
+		content: "";
+		display: table;
+	}
+	li {
+		border-top: 1px solid #ddd;
+		float: left;
+		height: 420px;
+		text-align: center;
+		width: 33%;
+		&:nth-child(-n+3) {
+			border-top: none;
+		}
+		&:nth-child(3n-1) {
+			box-shadow: 1px 0 0 #ddd;
+		}
+		&:nth-child(3n-2) {
+			box-shadow: 1px 0 0 #ddd;
+		}
+		&:hover {
+			.itemGridPrice {
+				opacity: 1;
+				transform: translateY(0px);
+			}
+		}
+	}
+	li>a {
+		color: #3498DB;
+		display: block;
+		height: 100%;
+		transition: background 0.2s;
+		&:hover {
+			background: #3498DB;
+			.itemGridPhoto {
+				transform: translateY(10px);
+				&:before {
+					color: #ffffff;
+				}
+			}
+			.itemGridTitle {
+				color: #ffffff;
+				transform: translateY(-30px);
+				&:before {
+					background: #ffffff;
+					margin-top: 80px;
+				}
+			}
+		}
+	}
+	.itemGridTitle {
+		font-size: 2em;
+		margin: 20px 0 10px 0;
+		padding: 20px 0 0 0;
+		position: relative;
+		transition: transform 0.2s;
+		&:before {
+			background: #3498DB;
+			content: '';
+			height: 6px;
+			left: 50%;
+			margin: -10px 0 0 -80px;
+			position: absolute;
+			top: 0px;
+			transition: margin-top 0.2s;
+			width: 160px;
+		}
+	}
+	.itemGridPrice {
+		color: #ffffff;
+		display: inline-block;
+		font-size: 1em;
+		letter-spacing: 1px;
+		opacity: 0;
+		text-transform: uppercase;
+		transform: translateY(10px);
+	}
 }
-.header{
-	display:inline-block;
+.itemGridPhoto {
+	display: block;
+	overflow:hidden;
+	transition: transform 0.3s;
+	max-height: 200px;
+	max-width: 15vh;
+	height:auto;
+	width:auto;
+	margin-left:25%;
+}
+.content {
+	background-color: #ddd;
+}
+.container {
+	padding: 20px 40px;
+	background-color: #eee;
 }
