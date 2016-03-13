@@ -79,6 +79,8 @@ describe("productDlgController", function() {
 	describe("when productdetails is", function() {
 		beforeEach(inject(function($controller, $rootScope) {
 			$scope = $rootScope.$new();
+			$scope.$close = function(param) { };
+
 			productDlgController = $controller('productDlgController', {
 				$scope: $scope,
 				centrisNotify: mockCentrisNotify,
@@ -86,6 +88,7 @@ describe("productDlgController", function() {
 			});
 			spyOn(mockCentrisNotify, "error");
 			spyOn(mockCentrisNotify, "success");
+			spyOn($scope, "$close");
 		}));
 
 		it("undefined, should throw a corresponding centrisError", function() {
@@ -115,8 +118,43 @@ describe("productDlgController", function() {
 			expect(mockCentrisNotify.success).not.toHaveBeenCalled();
 		});
 
+		it("valid, should call $scope.$close", function() {
+			$scope.productdetails = mockProductValid;
+			$scope.onOk();
+			expect($scope.$close).toHaveBeenCalledWith($scope.productdetails);
+		});
+
 	});
 
+	describe("when user cancels editing an item, ", function() {
+		beforeEach(inject(function($controller, $rootScope) {
+			$scope = $rootScope.$new();
+			$scope.$dismiss = function() { };
+
+			productDlgController = $controller('productDlgController', {
+				$scope: $scope,
+				centrisNotify: mockCentrisNotify,
+				productdetails: mockProductValid
+			});
+			spyOn($scope, "$dismiss");
+		}));
+
+		it ("should ensure that it reverts the changes correctly", function() {
+			$scope.productdetails.name = "Jane";
+			$scope.productdetails.price = 4000;
+			$scope.productdetails.imagePath = "https://www.petfinder.com/wp-content/uploads/2012/11/dog-how-to-select-your-new-best-friend-thinkstock99062463.jpg";
+			
+			$scope.onCancel();
+
+			expect($scope.productdetails.name).toEqual($scope.oldProductName);
+			expect($scope.productdetails.price).toEqual($scope.oldProductPrice);
+			expect($scope.productdetails.imagePath).toEqual($scope.oldProductImagepath);
+
+			expect($scope.$dismiss).toHaveBeenCalled();
+
+		});
+
+	});
 })
 
 

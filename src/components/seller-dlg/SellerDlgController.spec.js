@@ -36,6 +36,8 @@ describe("SellerDlgController", function() {
 	describe("when seller is", function() {
 		beforeEach(inject(function($controller, $rootScope) {
 			$scope = $rootScope.$new();
+			$scope.$close = function (param) { }
+
 			SellerDlgController = $controller('SellerDlgController', {
 				$scope: $scope,
 				centrisNotify: mockCentrisNotify,
@@ -43,6 +45,7 @@ describe("SellerDlgController", function() {
 			});
 			spyOn(mockCentrisNotify, "error");
 			spyOn(mockCentrisNotify, "success");
+			spyOn($scope, "$close");
 		}));
 
 		it ("undefined, should throw corresponding centrisError", function() {
@@ -70,6 +73,40 @@ describe("SellerDlgController", function() {
 			$scope.onOk();
 			expect(mockCentrisNotify.error).toHaveBeenCalledWith("sellerdlg.Messages.ImagePath");
 			expect(mockCentrisNotify.success).not.toHaveBeenCalled();
+		});
+
+		it ("should ensure that $scope.$close has been called with $scope.seller", function() {
+			$scope.seller = mockSellerValid;
+			$scope.onOk();
+			expect($scope.$close).toHaveBeenCalledWith($scope.seller);
+		});
+	});
+
+	describe("when seller cancels editing a seller, ", function() {
+		beforeEach(inject(function($controller, $rootScope) {
+			$scope = $rootScope.$new();
+			$scope.$dismiss = function () { }
+
+			SellerDlgController = $controller('SellerDlgController', {
+				$scope: $scope,
+				centrisNotify: mockCentrisNotify,
+				seller: mockSellerValid
+			});
+			spyOn($scope, "$dismiss");
+		}));
+
+		it("should revert changes correctly", function() {
+			$scope.seller.name = "Jane";
+			$scope.seller.category = "Jungle";
+			$scope.seller.imagePath = "https://www.petfinder.com/wp-content/uploads/2012/11/dog-how-to-select-your-new-best-friend-thinkstock99062463.jpg";
+			
+			$scope.onCancel();
+
+			expect($scope.seller.name).toEqual($scope.oldSellerName);
+			expect($scope.seller.category).toEqual($scope.oldSellerCategory);
+			expect($scope.seller.imagePath).toEqual($scope.oldSellerImagepath);
+
+			expect($scope.$dismiss).toHaveBeenCalled();
 		});
 	});
 

@@ -5,9 +5,9 @@ function SellerDlgController($scope,centrisNotify, seller){
 
 	$scope.seller = seller;
 	if(seller !== undefined) {
-		var oldSellerName = seller.name;
-		var oldSellerCategory = seller.category;
-		var oldSellerImagepath = seller.imagePath;
+		$scope.oldSellerName = seller.name;
+		$scope.oldSellerCategory = seller.category;
+		$scope.oldSellerImagepath = seller.imagePath;
 	}
 	//Align up
 	$scope.onOk = function onOk() {
@@ -44,23 +44,23 @@ function SellerDlgController($scope,centrisNotify, seller){
 
 	$scope.onCancel = function onCancel(){
 		if(seller !== undefined) {
-			if($scope.seller.name !== oldSellerName)
+			if($scope.seller.name !== $scope.oldSellerName)
 			{
 					console.log("Success name doesn't match");
 					//The name doesn't match so we revert the changes
-					$scope.seller.name = oldSellerName;
+					$scope.seller.name = $scope.oldSellerName;
 			}
-		  	if($scope.seller.category !== oldSellerCategory)
+		  	if($scope.seller.category !== $scope.oldSellerCategory)
 			{
 					console.log("Success name doesn't match");
 					//The name doesn't match so we revert the changes
-					$scope.seller.category = oldSellerCategory;
+					$scope.seller.category = $scope.oldSellerCategory;
 			}
-			if($scope.seller.imagePath !== oldSellerImagepath)
+			if($scope.seller.imagePath !== $scope.oldSellerImagepath)
 			{
 					console.log("Success name doesn't match");
 					//The name doesn't match so we revert the changes
-					$scope.seller.imagePath = oldSellerImagepath;
+					$scope.seller.imagePath = $scope.oldSellerImagepath;
 			}
 		}
 		$scope.$dismiss();
