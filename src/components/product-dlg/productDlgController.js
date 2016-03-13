@@ -4,8 +4,9 @@ angular.module("project3App").controller("productDlgController",
 function productDlgController($scope,centrisNotify, productdetails){
 
 	$scope.productdetails = productdetails;
-
-
+	var oldProductName = productdetails.name;
+	var oldProductPrice = productdetails.price;
+	var oldProductImagepath = productdetails.imagePath;
 	//Aligne up
 	$scope.onOk = function onOk() {
 		if($scope.productdetails === undefined)
@@ -26,7 +27,6 @@ function productDlgController($scope,centrisNotify, productdetails){
 			centrisNotify.error("sellerdetails.Messages.PriceMissing");
 			return;
 		}
-
 		/*else if($scope.productdetails.quantitySold === undefined || $scope.productdetails.quantitySold.length === 0)
 		{
 			//Validation message
@@ -56,6 +56,25 @@ function productDlgController($scope,centrisNotify, productdetails){
 		$scope.$close($scope.productdetails);
 	};
 	$scope.onCancel = function onCancel(){
+		if($scope.productdetails.name !== oldProductName)
+		{
+				console.log("Success name doesn't match");
+				//The name doesn't match so we revert the changes
+				$scope.productdetails.name = oldProductName;
+		}
+		if($scope.productdetails.price !== oldProductPrice)
+		{
+				console.log("Success category doesn't match");
+				//The name doesn't match so we revert the changes
+				$scope.productdetails.price = oldProductPrice;
+		}
+		if($scope.productdetails.imagePath !== oldProductImagepath)
+		{
+				console.log("Success imagePath doesn't match");
+				//The name doesn't match so we revert the changes
+				$scope.productdetails.imagePath = oldProductImagepath;
+		}
+
 		$scope.$dismiss();
 	};
 });

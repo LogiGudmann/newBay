@@ -40,13 +40,13 @@ angular.module("project3App").controller("ProductController",
 			AppResource.addSellerProduct(id, productdetails).success(function(productdetails) {
 				AppResource.getSellerProducts(id).success(function(productdetails){
 					$scope.sellerproducts = productdetails;
+					console.log("Updating seller products");
 				});
 				centrisNotify.success("sellerdetails.Messages.SaveSucceededProd");
-		}).error(function(){
-			//TODO:
+			}).error(function(){
 			//console.log("We go here error");
 			centrisNotify.error("sellers.Messages.SaveFailedProd");
-		});
+	});
 		});
 	};
 
