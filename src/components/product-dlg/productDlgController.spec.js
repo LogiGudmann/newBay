@@ -14,48 +14,43 @@ describe("productDlgController", function() {
 	};
 
 	var mockProductValid = {
-		id: 1,
-		product: {
 			id: 1,
 			name: "Diskur",
 			price: 2000,
 			quantitySold: 30,
 			quantityInStock: 44,
 			imagePath: "http://www.wedgwood.co.uk/media/catalog/product/cache/1/image/1200x1200/9df78eab33525d08d6e5fb8d27136e95/w/e/wedgwood-sterling-plate-032677419458.jpg"
-		}
+		
 	};
 
 	var mockProductWithoutName = {
-		id: 1,
-		product: {
 			id: 1,
+			name: undefined,
 			price: 2000,
 			quantitySold: 30,
 			quantityInStock: 44,
 			imagePath: "http://www.wedgwood.co.uk/media/catalog/product/cache/1/image/1200x1200/9df78eab33525d08d6e5fb8d27136e95/w/e/wedgwood-sterling-plate-032677419458.jpg"
-		}
+		
 	};
 
 	var mockProductWithoutPrice = {
-		id: 1,
-		product: {
 			id: 1,
 			name: "Diskur",
+			price: undefined,
 			quantitySold: 30,
 			quantityInStock: 44,
 			imagePath: "http://www.wedgwood.co.uk/media/catalog/product/cache/1/image/1200x1200/9df78eab33525d08d6e5fb8d27136e95/w/e/wedgwood-sterling-plate-032677419458.jpg"
-		}
+		
 	};
 
 	var mockProductWithoutImagePath = {
-		id: 1,
-		product: {
 			id: 1,
 			name: "Diskur",
 			price: 2000,
 			quantitySold: 30,
-			quantityInStock: 44
-		}
+			quantityInStock: 44,
+			imagePath: undefined
+		
 	};
 
 	/* ----------$end Controller Variables */
@@ -106,12 +101,19 @@ describe("productDlgController", function() {
 			expect(mockCentrisNotify.success).not.toHaveBeenCalled();
 		});
 
-		// it("unpriced, should throw a corresponding centrisError", function() {
-		// 	$scope.productdetails = mockProductWithoutPrice;
-		// 	$scope.onOk();
-		// 	expect(mockCentrisNotify.error).toHaveBeenCalledWith("sellerdetails.Messages.PriceMissing");
-		// 	expect(mockCentrisNotify.success).not.toHaveBeenCalled();
-		// });
+		it("unpriced, should throw a corresponding centrisError", function() {
+			$scope.productdetails = mockProductWithoutPrice;
+			$scope.onOk();
+			expect(mockCentrisNotify.error).toHaveBeenCalledWith("sellerdetails.Messages.PriceMissing");
+			expect(mockCentrisNotify.success).not.toHaveBeenCalled();
+		});
+
+		it("unimaged, should throw a corresponding centrisError", function() {
+			$scope.productdetails = mockProductWithoutImagePath;
+			$scope.onOk();
+			expect(mockCentrisNotify.error).toHaveBeenCalledWith("sellerdetails.Messages.ImagePath");
+			expect(mockCentrisNotify.success).not.toHaveBeenCalled();
+		});
 
 	});
 
