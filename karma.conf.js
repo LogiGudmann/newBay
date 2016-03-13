@@ -49,10 +49,20 @@ module.exports = function(config) {
     preprocessors: {
         // Files to include in the code coverage report:
        'src/components/language/LanguageController.js': ['coverage'],
+
+       'src/components/product/ProductController.js': ['coverage'],
+       'src/components/product/product-directive.js': ['coverage'],
+
+       'src/components/product-dlg/productDlg.js': ['coverage'],
+       'src/components/product-dlg/productDlgController.js': ['coverage'],
+
        'src/components/seller-details/SellerdetailsController.js': ['coverage'],
-       'src/components/seller-dlg/SellerDlgController.js': ['coverage'],
+
        'src/components/seller-dlg/sellerDlg.js': ['coverage'],
+       'src/components/seller-dlg/SellerDlgController.js': ['coverage'],
+
        'src/components/sellers/SellersController.js': ['coverage']
+       
     },
 
     coverageReporter: {

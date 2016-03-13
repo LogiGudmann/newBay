@@ -5,9 +5,11 @@ function SellerDlgController($scope,centrisNotify, seller){
 
 	$scope.seller = seller;
 
-	var oldSellerName = seller.name;
-	var oldSellerCategory = seller.category;
-	var oldSellerImagepath = seller.imagePath;
+	if (seller !== undefined) {
+		var oldSellerName = seller.name;
+		var oldSellerCategory = seller.category;
+		var oldSellerImagepath = seller.imagePath;
+	}
 	//Align up
 	$scope.onOk = function onOk() {
 		console.log("we go here");
