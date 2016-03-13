@@ -39,11 +39,11 @@ function productDlgController($scope,centrisNotify, productdetails){
 			centrisNotify.error("sellerdetails.Messages.ImagePath");
 			return;
 		}
-		
+
 		//close window and promise object resolves as sucess
 		$scope.$close($scope.productdetails);
 	};
-	
+
 	$scope.onCancel = function onCancel(){
 		if(productdetails !== undefined){
 			if($scope.productdetails.name !== $scope.oldProductName)
