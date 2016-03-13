@@ -8,7 +8,7 @@ function SellerDlg($uibModal){
 				templateUrl:"components/seller-dlg/seller-dlg.html",
 				controller:"SellerDlgController",
 				resolve:{
-					seller:seller
+					seller:seller,
 				}
 			});
 			return modalInstance.result;
