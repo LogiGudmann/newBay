@@ -11,7 +11,6 @@ function SellerDlgController($scope,centrisNotify, seller){
 	}
 	//Align up
 	$scope.onOk = function onOk() {
-		console.log("we go here");
 		if($scope.seller === undefined)
 		{
 			//Validation message
@@ -46,19 +45,16 @@ function SellerDlgController($scope,centrisNotify, seller){
 		if(seller !== undefined) {
 			if($scope.seller.name !== $scope.oldSellerName)
 			{
-					console.log("Success name doesn't match");
 					//The name doesn't match so we revert the changes
 					$scope.seller.name = $scope.oldSellerName;
 			}
 		  	if($scope.seller.category !== $scope.oldSellerCategory)
 			{
-					console.log("Success name doesn't match");
 					//The name doesn't match so we revert the changes
 					$scope.seller.category = $scope.oldSellerCategory;
 			}
 			if($scope.seller.imagePath !== $scope.oldSellerImagepath)
 			{
-					console.log("Success name doesn't match");
 					//The name doesn't match so we revert the changes
 					$scope.seller.imagePath = $scope.oldSellerImagepath;
 			}

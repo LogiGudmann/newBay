@@ -6,11 +6,8 @@ angular.module("project3App").controller("ProductController",
 		$scope.sellerproducts = [];
 		$scope.productDetails = {};
 		$scope.showTab = 'all';
-		console.log("TOP OF PRODUCT CONTROLLER");
 		var id = parseInt($scope.id);
-			//console.log($scope.sellerdetails.name);
 			AppResource.getSellerProducts(id).success(function(sellerproducts){
-				console.log("getSellerProducts nr 1 inside ");
 				$scope.sellerproducts = sellerproducts;
 			});
 			$scope.onChange = function onChange(id){
@@ -22,12 +19,7 @@ angular.module("project3App").controller("ProductController",
 				$scope.productdetails = productdetails;
 			});
 			var product = $scope.productdetails.product;
-			console.log("product name");
-			console.log(product);
 			productDlg.show(product).then(function(product) {
-				console.log("product name");
-				console.log(product);
-				console.log("We go into the dialog window");
 				AppResource.updateSellerProduct(id, product).success(function(product) {
 					centrisNotify.success("sellerdetails.Messages.EditSucceededProd");
 				}).error(function(){
@@ -41,11 +33,9 @@ angular.module("project3App").controller("ProductController",
 				AppResource.addSellerProduct(id, productdetails).success(function(productdetails) {
 					AppResource.getSellerProducts(id).success(function(productdetails){
 						$scope.sellerproducts = productdetails;
-						console.log("Updating seller products");
 					});
 					centrisNotify.success("sellerdetails.Messages.SaveSucceededProd");
 				}).error(function(){
-			//console.log("We go here error");
 			centrisNotify.error("sellers.Messages.SaveFailedProd");
 		});
 			});

@@ -121,7 +121,6 @@ function AppResource() {
 		},
 
 		updateSeller: function(id, seller) {
-			console.log("In AppResource UpdateSeller:");
 			if (mockResource.successUpdateSeller) {
 				var current = _.find(mockSellers, function(o){ return o.id === id;});
 				if (current !== null) {
@@ -160,7 +159,6 @@ function AppResource() {
 		},
 
 		addSellerProduct: function addSellerProduct(id, product) {
-			console.log("addSellerProduct");
 			var success = false;
 			if (mockResource.successAddSellerProduct) {
 				var seller = _.find(mockSellers, function(o){ return o.id === id;});
@@ -198,11 +196,8 @@ function AppResource() {
 		},
 		updateSellerProduct: function updateSellerProduct(id,product){
 			//Update the product we want to update
-			console.log("inside updateSellerProduct");
 			if(mockResource.successUpdateSellerProduct){
 				var currentProd = _.find(mockProducts, function(o){ return o.product.id === id;});
-				//console.log("Inside AppResource updateSellerProduct:");
-				//console.log(currentProd.name);
 				if (currentProd !== null) {
 					currentProd.name   = product.name;
 					currentProd.price = product.price;
