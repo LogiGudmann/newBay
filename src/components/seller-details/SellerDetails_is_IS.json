@@ -6,7 +6,8 @@
 		"Add":					     "Bæta við",
 		"Adding":					 "Bæta við hlut",
 		"AllProd":					 "Allar vörur",
-		"AddingProd":	      "Bæta við vöru",
+		"AddingProd":	      		 "Bæta við vöru",
+		"EditProd":					 "Breyta vöru",
 		"TopTen":					 "Topp 10 vörurnar",
 		"Price":					 "Verð",
 		"QuantitySold":				 "Fjöldi seldra",
@@ -26,6 +27,7 @@
 			"SaveFailedProd":            "Því miður tókst ekki að bæta við vöru",
 			"SaveSucceeded":         "Nýjum seljanda hefur verið bætt við",
 			"SaveFailed":            "Því miður tókst ekki að bæta við nýjum seljanda"
+
 		}
 	}
 }
