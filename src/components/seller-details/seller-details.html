@@ -2,10 +2,7 @@
 	<!-- Need to get sellers info and put up tables-->
 	<div class="headerBanner">
 		<span ng-controller="ProductController" class="Sellers">
-			<button class="fancyButton productButton glyphicon glyphicon-plus-sign" ng-click="onAddProduct()">
-				<i class="fa fa-plus"/>
-				<span translate="sellerdetails.Add"/>
-			</button>
+
 		</span>
 		<div class="blur">
 			<div class="userInfo" >
@@ -26,12 +23,20 @@
 	<div class="content">
 		<div class="container" ng-controller="ProductController">
 			<div class="tabButtonDiv">
-				<a class="noHighlight" ng-click="showTab = 'all'">
-					<button class="tabButtons" translate="sellerdetails.AllProd"></button>
+				<a href="#/" class="goBack">
+					<button class="fancyButton backButton glyphicon glyphicon-arrow-left"><span translate="language.Back"></span></button>
 				</a>
-				<a class="noHighlight" ng-click="showTab = 'top'">
-					<button class="tabButtons" translate="sellerdetails.TopTen"></button>
-				</a>
+				<span class="spanTab">
+					<a class="noHighlight" ng-click="showTab = 'all'">
+						<button class="tabButtons" translate="sellerdetails.AllProd"></button>
+					</a>
+					<a class="noHighlight" ng-click="showTab = 'top'">
+						<button class="tabButtons" translate="sellerdetails.TopTen"></button>
+					</a>
+				</span>
+				<button class="fancyButton productButton glyphicon glyphicon-plus-sign" ng-click="onAddProduct()">
+					<span translate="sellerdetails.Add"/>
+				</button>
 			</div>
 			<div class="productDiv">
 				<h2 ng-show="showTab == 'all'" translate="sellerdetails.AllProd"></h2>
@@ -58,9 +63,6 @@
 						</a>
 					</li>
 				</ul>
-				<a href="#/">
-					<span translate="language.Back"></span>
-				</a>
 			</div>
 		</div>
 	</div>

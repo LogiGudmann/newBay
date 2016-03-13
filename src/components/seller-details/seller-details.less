@@ -1,11 +1,17 @@
-.userImage{
+.userImage {
 	position:relative;
 	max-height: 150px;
+}
 
+.productButton {
+	float: right;
+	margin-top:0 !important;
 }
-.productButton{
-	margin-top:20px !important;
+
+.backButton {
+	margin-top:0 !important;
 }
+
 .userText {
 	float:left;
 	margin-left:20px;
@@ -14,11 +20,12 @@
 	outline: none;
 	border-radius:3px;
 }
+
 .userPhoto {
 	float:left;
 	margin:20px;
-
 }
+
 .headerBanner {
 	position: relative;
 	width: 100%;
@@ -30,7 +37,7 @@
 	background: url('/img/userBanner.jpg') no-repeat bottom fixed;
 	background-size: cover;
 
-	.userInfo{
+	.userInfo {
 		position: fixed;
 		color:#eee;
 		position:relative;
@@ -39,14 +46,12 @@
 		top:0;left:0;right:0;bottom:0;
 		opacity: 1;
 		z-index: 5;
-
-
 	}
-	.blur{
+	.blur {
 		box-shadow: 0 0 10px .1px;
 		width:auto;
 		min-height:200px;
-		height:30vh;
+		height:250px;
 		position:relative;
 		margin: 20px;
 		top:0;left:0;right:0;bottom:0;
@@ -63,7 +68,6 @@
 			display: block;
 			background: url('/img/blur2.jpg') bottom left;
 			-webkit-filter: blur(10px);
-
 		}
 	}
 }
@@ -72,9 +76,9 @@
 	border-radius: 10px;
 	font-family: sans-serif;
 	font-size: 25px;
-	color: #FFF;
+	color: #eee;
 	text-decoration: none;  
-	background-color: #3498DB;
+	background-color: #3099df;
 	border-bottom: 5px solid #2981C9;
 	text-shadow: 0px -2px #2981C9;
 	transition: all 0.1s;
@@ -88,16 +92,31 @@
 		transform: translate(0px,5px);
 		border-bottom: 1px solid;
 	}
+
 }
-.tabButtonDiv{
+.tabButtonDiv {
 	margin:20px;
+	display: flex;	
+
 }
-.productDiv{
+.spanTab {
+	flex: 1;
+	text-align: center;
+	>* {
+		display: inline-block;
+	}
+}
+.productDiv {
 	margin:20px;
 }
 
+.goBack,
+.productButton {
+	flex: 0 0 auto;
+}
 
 .itemGrid {
+	cursor:pointer;
 	list-style: none;
 	margin: 0;
 	padding: 0 0 50px 0;
@@ -133,23 +152,23 @@
 		}
 	}
 	li>a {
-		color: #3498DB;
+		color: #3099df;
 		display: block;
 		height: 100%;
 		transition: background 0.2s;
 		&:hover {
-			background: #3498DB;
+			background: #3099df;
 			.itemGridPhoto {
 				transform: translateY(10px);
 				&:before {
-					color: #ffffff;
+					color: #fff;
 				}
 			}
 			.itemGridTitle {
-				color: #ffffff;
+				color: #fff;
 				transform: translateY(-30px);
 				&:before {
-					background: #ffffff;
+					background: #fff;
 					margin-top: 80px;
 				}
 			}
@@ -162,19 +181,19 @@
 		position: relative;
 		transition: transform 0.2s;
 		&:before {
-			background: #3498DB;
+			background: #3099df;
+			position: absolute;
 			content: '';
 			height: 6px;
-			left: 50%;
+			width: 160px;
 			margin: -10px 0 0 -80px;
-			position: absolute;
+			left: 50%;
 			top: 0px;
 			transition: margin-top 0.2s;
-			width: 160px;
 		}
 	}
 	.itemGridPrice {
-		color: #ffffff;
+		color: #fff;
 		display: inline-block;
 		font-size: 1em;
 		letter-spacing: 1px;
