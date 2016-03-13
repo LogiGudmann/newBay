@@ -30,6 +30,8 @@ angular.module("project3App").controller("ProductController",
 
 		$scope.onAddProduct = function onAddProduct(){
 			productDlg.show().then(function(productdetails) {
+				productdetails.quantitySold = 0;
+				productdetails.quantityInStock = 0;
 				AppResource.addSellerProduct(id, productdetails).success(function(productdetails) {
 					AppResource.getSellerProducts(id).success(function(productdetails){
 						$scope.sellerproducts = productdetails;
