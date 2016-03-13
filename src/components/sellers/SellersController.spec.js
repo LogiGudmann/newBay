@@ -161,4 +161,4 @@ describe("SellersController", function() {
 	});
 
 
-})
+});
