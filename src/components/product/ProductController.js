@@ -1,7 +1,7 @@
 "use strict";
 
 angular.module("project3App").controller("ProductController",
-	function ProductController($scope,$routeParams,AppResource,centrisNotify,productDlg) {
+	function ProductController($scope,$routeParams,AppResource,centrisNotify,productDlg,$route) {
 		$scope.id = $routeParams.id;
 		$scope.sellerproducts = [];
 		$scope.productDetails = {};
@@ -34,6 +34,7 @@ angular.module("project3App").controller("ProductController",
 					AppResource.getSellerProducts(id).success(function(productdetails){
 						$scope.sellerproducts = productdetails;
 					});
+					$route.reload();
 					centrisNotify.success("sellerdetails.Messages.SaveSucceededProd");
 				}).error(function(){
 			centrisNotify.error("sellers.Messages.SaveFailedProd");
