@@ -4,7 +4,7 @@ angular.module("project3App").controller("SellerDlgController",
 function SellerDlgController($scope,centrisNotify, seller){
 
 	$scope.seller = seller;
-	if(seller !== undefined){
+	if(seller !== undefined) {
 		var oldSellerName = seller.name;
 		var oldSellerCategory = seller.category;
 		var oldSellerImagepath = seller.imagePath;
@@ -43,7 +43,7 @@ function SellerDlgController($scope,centrisNotify, seller){
 
 
 	$scope.onCancel = function onCancel(){
-		if(seller !== undefined)
+		if(seller !== undefined) {
 			if($scope.seller.name !== oldSellerName)
 			{
 					console.log("Success name doesn't match");

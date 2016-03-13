@@ -4,13 +4,14 @@ angular.module("project3App").controller("productDlgController",
 function productDlgController($scope,centrisNotify, productdetails){
 
 	$scope.productdetails = productdetails;
-	if(productdetails !== undefined){
+	if(productdetails !== undefined) {
 		var oldProductName = productdetails.name;
 		var oldProductPrice = productdetails.price;
 		var oldProductImagepath = productdetails.imagePath;
 	}
 
-	//Aligne up
+	//Align up
+
 	$scope.onOk = function onOk() {
 		if($scope.productdetails === undefined)
 		{
@@ -55,9 +56,11 @@ function productDlgController($scope,centrisNotify, productdetails){
 			//Not working
 			centrisNotify.error("sellerdetails.Messages.PriceZero");
 		}*/
-				//close window and promise object resolves as sucess
+		
+		//close window and promise object resolves as sucess
 		$scope.$close($scope.productdetails);
 	};
+	
 	$scope.onCancel = function onCancel(){
 		if(productdetails !== undefined){
 			if($scope.productdetails.name !== oldProductName)

@@ -9,7 +9,6 @@ describe("SellerDlgController", function() {
 	var mockSellerWithoutName = 	{ id: 1, category: "Business", imagePath: "http://i.imgur.com/OYVpe2W.jpg?fb" };
 	var mockSellerWithoutCategory = { id: 1, name: "John Doe", imagePath: "http://i.imgur.com/OYVpe2W.jpg?fb" };
 	var mockSellerWithoutImage = 	{ id: 1, name: "John Doe", category: "Business" };
-	var mockSellerWithoutShortImgPath = 	{ id: 1, name: "John Doe", category: "Business" };
 
 
 	var mockCentrisNotify = {

@@ -18,7 +18,6 @@
 				$scope.sellerdetails = sellerdetails;
 			});
 			var seller = $scope.sellerdetails;
-			console.log("SELLLLLLER" + seller);
 			SellerDlg.show(seller).then(function(seller) {
 				AppResource.updateSeller(id, seller).success(function(seller) {
 					//TODO:

@@ -2,12 +2,6 @@ describe("SellersController", function() {
 	// hér kæmi eitthvað beforeEach sem ætti alltaf við
 	beforeEach(module("project3App"));
 
-	/* ----------$begin Controller Variables */
-	// Inject mockResource into a variable
-	// mockResource
-	var $injector = angular.injector(['project3App']);
-	var mockResource = $injector.get('AppResource');
-
 	// $scope
 	var $scope;
 
@@ -35,11 +29,11 @@ describe("SellersController", function() {
 
 	describe("when resource succeeds in loading a list of sellers, ", function () {
 		// Hér kæmu sérstök beforeEach, þar á meðal sem býr til controller
-		beforeEach(inject(function($controller, $rootScope) {
+		beforeEach(inject(function($controller, $rootScope, AppResource) {
 			$scope = $rootScope.$new();
 			SellersController = $controller('SellersController', {
 				$scope: $scope,
-				AppResource: mockResource,
+				AppResource: AppResource,
 				centrisNotify: mockCentrisNotify,
 				SellerDlg: mockSellerDlg
 			});
@@ -62,14 +56,14 @@ describe("SellersController", function() {
 	describe("when resource fails loading a list of sellers", function () {
 		// Hér kæmu önnur beforeEach, sem þar á meðal búa til controller, en eru þá
 		// búin að setja resource breytuna á false áður en controllerinn er smíðaður.
-		beforeEach(inject(function($controller, $rootScope) {
+		beforeEach(inject(function($controller, $rootScope, AppResource) {
 
-			mockResource.successLoadSellers = false;
+			AppResource.successLoadSellers = false;
 
 			$scope = $rootScope.$new();
 			SellersController = $controller('SellersController', {
 				$scope: $scope,
-				AppResource: mockResource,
+				AppResource: AppResource,
 				centrisNotify: mockCentrisNotify,
 				SellerDlg: mockSellerDlg
 			});
@@ -83,11 +77,11 @@ describe("SellersController", function() {
 	describe("when resource succeeds adding a seller", function () {
 		// Hér kæmu önnur beforeEach, sem þar á meðal búa til controller, en eru þá
 		// búin að setja resource breytuna á false áður en controllerinn er smíðaður.
-		beforeEach(inject(function($controller, $rootScope) {
+		beforeEach(inject(function($controller, $rootScope, AppResource) {
 			$scope = $rootScope.$new();
 			SellersController = $controller('SellersController', {
 				$scope: $scope,
-				AppResource: mockResource,
+				AppResource: AppResource,
 				centrisNotify: mockCentrisNotify,
 				SellerDlg: mockSellerDlg
 			});
@@ -105,12 +99,12 @@ describe("SellersController", function() {
 	describe("when resource fails adding a seller", function () {
 		// Hér kæmu önnur beforeEach, sem þar á meðal búa til controller, en eru þá
 		// búin að setja resource breytuna á false áður en controllerinn er smíðaður.
-		beforeEach(inject(function($controller, $rootScope) {
+		beforeEach(inject(function($controller, $rootScope, AppResource) {
 			$scope = $rootScope.$new();
-			mockResource.successAddSeller = false;
+			AppResource.successAddSeller = false;
 			SellersController = $controller('SellersController', {
 				$scope: $scope,
-				AppResource: mockResource,
+				AppResource: AppResource,
 				centrisNotify: mockCentrisNotify,
 				SellerDlg: mockSellerDlg
 			});
@@ -125,5 +119,46 @@ describe("SellersController", function() {
 		});
 	});
 
+	describe("when resource succeeds editing a seller", function () {
+		beforeEach(inject(function($controller, $rootScope, AppResource) {
+			$scope = $rootScope.$new();
+			SellersController = $controller('SellersController', {
+				$scope: $scope,
+				AppResource: AppResource,
+				centrisNotify: mockCentrisNotify,
+				SellerDlg: mockSellerDlg
+			});
+			spyOn(mockCentrisNotify, "success");
+			spyOn(mockCentrisNotify, "error");
+		}));
 
-});
+		it("should ensure that a corresponding centrisNotification has been shown", function() {
+			$scope.onChange(1);
+			expect(mockCentrisNotify.success).toHaveBeenCalledWith("sellers.Messages.SaveSucceeded");
+			expect(mockCentrisNotify.error).not.toHaveBeenCalled();
+		});
+	});
+
+	describe("when resource fails editing a seller", function () {
+		beforeEach(inject(function($controller, $rootScope, AppResource) {
+			$scope = $rootScope.$new();
+			AppResource.successUpdateSeller = false;
+			SellersController = $controller('SellersController', {
+				$scope: $scope,
+				AppResource: AppResource,
+				centrisNotify: mockCentrisNotify,
+				SellerDlg: mockSellerDlg
+			});
+			spyOn(mockCentrisNotify, "success");
+			spyOn(mockCentrisNotify, "error");
+		}));
+
+		it("should ensure that a corresponding centrisNotification has been shown", function() {
+			$scope.onChange(1);
+			expect(mockCentrisNotify.error).toHaveBeenCalledWith("sellers.Messages.SaveFailed");
+			expect(mockCentrisNotify.success).not.toHaveBeenCalled();
+		});
+	});
+
+
+})
