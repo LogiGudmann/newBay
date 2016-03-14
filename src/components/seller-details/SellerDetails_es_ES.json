@@ -11,6 +11,8 @@
 		"EditProd":				     "Editar producto",
 		"TopTen":					 "Top 10 productos",
 		"Price":					 "Precio",
+		"Alert":							"Este usuario no tiene ningún producto!",
+		"PriceZero":				 "Precio no puede estar bajo 0",
 		"QuantitySold":				 "Cantidad vendida",
 		"QuantityInStock":			 "Cantidad en stock",
 		"Messages" : {

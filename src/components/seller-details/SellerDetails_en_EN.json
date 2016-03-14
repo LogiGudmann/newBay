@@ -13,7 +13,8 @@
 		"Price":					 "Price",
 		"QuantitySold":				 "Quantity sold",
 		"QuantityInStock":			 "Quantity in stock",
-		"PriceZero":				 "Precio no puede estar bajo 0",
+		"PriceZero":				 "Price cannot be below zero",
+		"Alert":							"This user has no product!",
 		"Messages" : {
 			"NameMissing": 		 	 "Missing name",
 			"CategoryMissing":		 "Missing category!",

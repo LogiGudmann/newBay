@@ -5,19 +5,12 @@ angular.module("project3App").controller("ProductController",
 		$scope.id = $routeParams.id;
 		$scope.sellerproducts = [];
 		$scope.productDetails = {};
-		$scope.alert = {};
 		$scope.showTab = 'all';
 		var modify = ["editing","adding"];
 
 		var id = parseInt($scope.id);
 			AppResource.getSellerProducts(id).success(function(sellerproducts){
 				$scope.sellerproducts = sellerproducts;
-				console.log($scope.sellerproducts);
-				if($scope.sellerproducts.length === 0)
-				{
-					//console.log("The user has no product");
-					$scope.alert = 'The seller has no product!';
-				}
 			});
 			$scope.onChange = function onChange(id){
 				//We need to create UpdateProduct function in appresource
