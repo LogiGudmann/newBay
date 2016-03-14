@@ -5,9 +5,9 @@ angular.module("project3App").controller("ProductController",
 		$scope.id = $routeParams.id;
 		$scope.sellerproducts = [];
 		$scope.productDetails = {};
-		$scope.Editing = false;
 		$scope.alert = {};
 		$scope.showTab = 'all';
+		var modify = ["editing","adding"];
 
 		var id = parseInt($scope.id);
 			AppResource.getSellerProducts(id).success(function(sellerproducts){
@@ -24,14 +24,11 @@ angular.module("project3App").controller("ProductController",
 				//As $scope.prouductdetails returns us id: sellerid and product, which is the product we want
 				//We assign product directly to that as we don't need the sellerid
 				//The function addproduct assigns the sellerid for us
-				$scope.Editing = true;
-				console.log("Editing is true");
-				console.log($scope.Editing);
 				AppResource.getProductDetails(id).success(function(productdetails){
 					$scope.productdetails = productdetails;
 				});
 				var product = $scope.productdetails.product;
-				productDlg.show(product).then(function(product) {
+				productDlg.show(modify[0],product).then(function(product) {
 					AppResource.updateSellerProduct(id, product).success(function(product) {
 						centrisNotify.success("sellerdetails.Messages.EditSucceededProd");
 					}).error(function(){
@@ -41,7 +38,7 @@ angular.module("project3App").controller("ProductController",
 		};
 
 		$scope.onAddProduct = function onAddProduct(){
-			productDlg.show().then(function(productdetails) {
+			productDlg.show(modify[1]).then(function(productdetails) {
 				productdetails.quantitySold = 0;
 				productdetails.quantityInStock = 0;
 				AppResource.addSellerProduct(id, productdetails).success(function(productdetails) {

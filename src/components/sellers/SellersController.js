@@ -7,8 +7,7 @@
 
 		$scope.sellerdetails = {};
 		$scope.sellers = {};
-		$scope.Editing = false;
-
+		var modify = ["editing","adding"];
 		$scope.sortBy = 'name'; /* Default sorting by name, not category*/
 		$scope.ASCENDING = false;
 		AppResource.getSellers().success(function(sellers) {
@@ -16,12 +15,11 @@
 		});
 
 		$scope.onChange = function onChange(id){
-			$scope.Editing = true;
 			AppResource.getSellerDetails(id).success(function(sellerdetails){
 				$scope.sellerdetails = sellerdetails;
 			});
 			var seller = $scope.sellerdetails;
-			SellerDlg.show(seller).then(function(seller) {
+			SellerDlg.show(modify[0],seller).then(function(seller) {
 				AppResource.updateSeller(id, seller).success(function(seller) {
 					//TODO:
 					centrisNotify.success("sellers.Messages.SaveSucceeded");
@@ -33,7 +31,7 @@
 		};
 
 		$scope.onAddSeller = function onAddSeller(){
-			SellerDlg.show().then(function(seller) {
+			SellerDlg.show(modify[1]).then(function(seller) {
 				AppResource.addSeller(seller).success(function(seller) {
 				//Took out apptitle
 				centrisNotify.success("sellers.Messages.SaveSucceeded");

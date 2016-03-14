@@ -1,13 +1,19 @@
 "use strict";
 
 angular.module("project3App").controller("productDlgController",
-function productDlgController($scope,centrisNotify, productdetails){
-
-	$scope.productdetails = productdetails;
-	if(productdetails !== undefined) {
-		$scope.oldProductName = productdetails.name;
-		$scope.oldProductPrice = productdetails.price;
-		$scope.oldProductImagepath = productdetails.imagePath;
+function productDlgController($scope,centrisNotify, arr){
+	$scope.modify = arr[0];
+	$scope.productdetails = arr[1];
+	if($scope.modify === 'editing') {
+		$scope.edit = true;
+	}
+	if($scope.modify === 'adding') {
+		$scope.edit = false;
+	}
+	if($scope.productdetails !== undefined) {
+		$scope.oldProductName = $scope.productdetails.name;
+		$scope.oldProductPrice = $scope.productdetails.price;
+		$scope.oldProductImagepath = $scope.productdetails.imagePath;
 	}
 
 	//Align up
@@ -45,7 +51,7 @@ function productDlgController($scope,centrisNotify, productdetails){
 	};
 
 	$scope.onCancel = function onCancel(){
-		if(productdetails !== undefined){
+		if($scope.productdetails !== undefined){
 			if($scope.productdetails.name !== $scope.oldProductName)
 			{
 					//The name doesn't match so we revert the changes
