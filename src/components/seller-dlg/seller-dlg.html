@@ -1,5 +1,5 @@
 
-<div>
+<div class="DLGBody">
 	<div class="modal-header" ng-controller= "SellersController">
 		<h2 ng-show = "Editing == false" translate="sellerdlg.Adding"></h2>
 		<h2 ng-show = "Editing == true" translate="sellerdetails.EditProd"></h2>
@@ -8,30 +8,25 @@
 	<div class="Seller-Dlg">
 	<form>
 		<div class="EditModal">
-			<div>
-				<h4 translate="sellerdlg.Name"></h4>
-			</div>
-			<div>
-				<input type="text" ng-model= "seller.name" maxlength="30" autofocus />
-			</div>
+			<form role="form">			
+				<div class="form-group">
+					<h4 translate="sellerdlg.Name"></h4>
+					<input type="text" class="form-control" ng-model="seller.name" maxlength="30" autofocus= />
+				</div>
 
-			<div>
-				<h4 translate="sellerdlg.Category"></h4>
-			</div>
-			<div>
-				<input type="text" ng-model= "seller.category" maxlength="20" />
-			</div>
-
-			<div>
-				<h4 translate="sellerdlg.Photo"></h4>
-			</div>
-			<div>
-				<input type="url" ng-model="seller.imagePath">
-			</div>
+				<div class="form-group">
+					<h4 translate="sellerdlg.Category"></h4>
+					<input type="text" class="form-control" ng-model= "seller.category" maxlength="20" />
+				</div>
+				<div class="form-group">
+					<h4 translate="sellerdlg.Photo"></h4>
+					<input type="url" class="form-control" ng-model="seller.imagePath"/>
+				</div>
+			</form>
 		</div>
 		</form>
 	</div>
 	<div class="modal-footer">
-	 	<button class="btn btn-primary" type="button" ng-click="onOk()"><span translate="sellers.OK"></span></button>
-      	<button class="btn btn-warning" type="button" ng-click="onCancel()"><span translate="sellers.Cancel"></span></button>
+	 	<button class="btn btn-success" type="button" ng-click="onOk()"><span translate="sellers.OK"></span></button>
+      	<button class="btn btn-danger" type="button" ng-click="onCancel()"><span translate="sellers.Cancel"></span></button>
 </div>
