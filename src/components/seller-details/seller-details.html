@@ -26,10 +26,10 @@
 					<button class="fancyButton backButton glyphicon glyphicon-arrow-left"><span translate="language.Back"></span></button>
 				</a>
 				<span class="spanTab">
-					<a class="noHighlight" ng-click="showTab = 'all'">
+					<a class="noHighlight" ng-click="showTab = 'all'; sortBy='name'">
 						<button class="tabButtons" translate="sellerdetails.AllProd"></button>
 					</a>
-					<a class="noHighlight" ng-click="showTab = 'top'">
+					<a class="noHighlight" ng-click="showTab = 'top';sortBy='top10'">
 						<button class="tabButtons" translate="sellerdetails.TopTen"></button>
 					</a>
 				</span>
@@ -38,12 +38,12 @@
 				</button>
 			</div>
 			<div class="productDiv">
-			<a class="noHighlight" ng-click="sortBy = 'name'; ASCENDING = !ASCENDING">
+			<a class="noHighlight noTextEffects" ng-click="sortBy = 'name'; ASCENDING = !ASCENDING">
 				<span ng-show="sortBy == 'name' && !ASCENDING" class="glyphicon glyphicon-triangle-bottom"></span>
 				<span ng-show="sortBy == 'name' && ASCENDING"  class="glyphicon glyphicon-triangle-top"></span>
-				<h2 class="AllProductsHeader" ng-show="showTab == 'all'" translate="sellerdetails.AllProd"></h2>
+				<h2 class="AllProductsHeader allTab" ng-show="showTab == 'all'" translate="sellerdetails.AllProd"></h2>
 			</a>				
-			<h2 ng-show="showTab == 'top'"translate="sellerdetails.TopTen"></h2>
+			<h2 class="AllProductsHeader" ng-show="showTab == 'top'"translate="sellerdetails.TopTen"></h2>
 
 
 				<ul class="itemGrid">
