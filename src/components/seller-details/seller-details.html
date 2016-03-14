@@ -9,7 +9,6 @@
 				<span class="userText">
 					<h2 translate="sellerdetails.Name"></h2>
 					<h4>{{sellerdetails.name}}</h4>
-
 					<h2 translate="sellerdetails.Category"></h2>
 					<h4>{{sellerdetails.category}}</h4>
 				</span>
@@ -39,10 +38,16 @@
 				</button>
 			</div>
 			<div class="productDiv">
-				<h2 ng-show="showTab == 'all'" translate="sellerdetails.AllProd"></h2>
-				<h2 ng-show="showTab == 'top'"translate="sellerdetails.TopTen"></h2>
+			<a class="noHighlight" ng-click="sortBy = 'name'; ASCENDING = !ASCENDING">
+				<span ng-show="sortBy == 'name' && !ASCENDING" class="glyphicon glyphicon-triangle-bottom"></span>
+				<span ng-show="sortBy == 'name' && ASCENDING"  class="glyphicon glyphicon-triangle-top"></span>
+				<h2 class="AllProductsHeader" ng-show="showTab == 'all'" translate="sellerdetails.AllProd"></h2>
+			</a>				
+			<h2 ng-show="showTab == 'top'"translate="sellerdetails.TopTen"></h2>
+
+
 				<ul class="itemGrid">
-					<li ng-show="showTab == 'all'" ng-repeat="s in sellerproducts">
+					<li ng-show="showTab == 'all'" ng-repeat="s in sellerproducts | orderBy:sortBy:ASCENDING">
 						<a ng-click="onChange(s.id)">
 							<span>
 								<img ng-src="{{s.imagePath}}" class="itemGridPhoto"/>
