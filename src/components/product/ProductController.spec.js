@@ -14,6 +14,7 @@ describe("ProductController", function() {
 	};
 
 	var mockRouteParams = { id: 1 };
+	var mockRouteParamsForSellerWithNoProducts = { id: 4 };
 
 	// mockSellerDlg
 	var mockProductDlg = {
@@ -40,7 +41,7 @@ describe("ProductController", function() {
 				$routeParams: mockRouteParams,
 				AppResource: AppResource,
 				centrisNotify: mockCentrisNotify,
-				SellerDlg: mockProductDlg
+				productDlg: mockProductDlg
 			});
 		}));
 
@@ -148,7 +149,26 @@ describe("ProductController", function() {
 
 	});
 
-})
+	describe("when a seller has no products, ", function () {
+		// Hér kæmu sérstök beforeEach, þar á meðal sem býr til controller
+		beforeEach(inject(function($controller, $rootScope, AppResource) {
+			$scope = $rootScope.$new();
+			ProductController = $controller('ProductController', {
+				$scope: $scope,
+				$routeParams: mockRouteParamsForSellerWithNoProducts,
+				AppResource: AppResource,
+				centrisNotify: mockCentrisNotify,
+				productDlg: mockProductDlg
+			});
+		}));
+
+		it("should ensure that $scope.alert has gotten the correct value", function() {
+			expect($scope.alert).toEqual('The seller has no product!');
+		});
+
+	});
+
+});
 
 
 

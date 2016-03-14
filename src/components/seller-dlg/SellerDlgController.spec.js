@@ -15,21 +15,44 @@ describe("SellerDlgController", function() {
 		error: function(msg) { },
 		success: function(msg) { }
 	};
+
+	var mockArrEditingValid = 				['editing', mockSellerValid];
+	var mockArrEditingUndefined = 			['editing', undefined];
+	var mockArrEditingWithoutName = 		['editing', mockSellerWithoutName];
+	var mockArrEditingWithoutCategory = 	['editing', mockSellerWithoutCategory];
+	var mockArrEditingWithoutImage = 		['editing', mockSellerWithoutImage];
+
+	var mockArrAddingValid = ['adding', mockSellerValid];
 /* ----------$end Controller Variables */
 
-	describe("when the controller is defined,", function() {
+	describe("when the controller is defined with $scope.modify = 'editing',", function() {
 		beforeEach(inject(function($controller, $rootScope) {
 			$scope = $rootScope.$new();
 			SellerDlgController = $controller('SellerDlgController', {
 				$scope: $scope,
 				centrisNotify: mockCentrisNotify,
-				seller:  mockSellerValid
+				arr:  mockArrEditingValid
 			});
 		}));
 
 		it ("should have all its functions defined", function() {
 			expect($scope.onOk).toBeDefined();
 			expect($scope.onCancel).toBeDefined();
+		});
+	});
+
+	describe("when the controller is defined with $scope.modify = 'adding', ", function() {
+		beforeEach(inject(function($controller, $rootScope) {
+			$scope = $rootScope.$new();
+			SellerDlgController = $controller('SellerDlgController', {
+				$scope: $scope,
+				centrisNotify: mockCentrisNotify,
+				arr:  mockArrAddingValid
+			});
+		}));
+
+		it ("should set $scope.edit to false", function() {
+			expect($scope.edit).toEqual(false);
 		});
 	});
 
@@ -41,7 +64,7 @@ describe("SellerDlgController", function() {
 			SellerDlgController = $controller('SellerDlgController', {
 				$scope: $scope,
 				centrisNotify: mockCentrisNotify,
-				seller: undefined
+				arr: mockArrEditingUndefined
 			});
 			spyOn(mockCentrisNotify, "error");
 			spyOn(mockCentrisNotify, "success");
@@ -55,6 +78,7 @@ describe("SellerDlgController", function() {
 		});
 
 		it ("unnamed, should throw corresponding centrisError", function() {
+			//without name
 			$scope.seller = mockSellerWithoutName;
 			$scope.onOk();
 			expect(mockCentrisNotify.error).toHaveBeenCalledWith("sellerdlg.Messages.NameMissing");
@@ -62,13 +86,15 @@ describe("SellerDlgController", function() {
 		});
 
 		it ("uncategorized, should throw corresponding centrisError", function() {
+			//without category
 			$scope.seller = mockSellerWithoutCategory;
 			$scope.onOk();
 			expect(mockCentrisNotify.error).toHaveBeenCalledWith("sellerdlg.Messages.CategoryMissing");
 			expect(mockCentrisNotify.success).not.toHaveBeenCalled();
 		});
 
-		it ("uncategorized, should throw corresponding centrisError", function() {
+		it ("unimaged, should throw corresponding centrisError", function() {
+			//without img
 			$scope.seller = mockSellerWithoutImage;
 			$scope.onOk();
 			expect(mockCentrisNotify.error).toHaveBeenCalledWith("sellerdlg.Messages.ImagePath");
@@ -85,12 +111,12 @@ describe("SellerDlgController", function() {
 	describe("when seller cancels editing a seller, ", function() {
 		beforeEach(inject(function($controller, $rootScope) {
 			$scope = $rootScope.$new();
-			$scope.$dismiss = function () { }
+			$scope.$dismiss = function () { };
 
 			SellerDlgController = $controller('SellerDlgController', {
 				$scope: $scope,
 				centrisNotify: mockCentrisNotify,
-				seller: mockSellerValid
+				arr: mockArrEditingValid
 			});
 			spyOn($scope, "$dismiss");
 		}));

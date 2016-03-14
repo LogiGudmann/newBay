@@ -53,16 +53,24 @@ describe("productDlgController", function() {
 		
 	};
 
+	var mockArrEditingValid = 				['editing', mockProductValid];
+	var mockArrEditingUndefined = 			['editing', undefined];
+	var mockArrEditingWithoutName = 		['editing', mockProductWithoutName];
+	var mockArrEditingWithoutPrice = 		['editing', mockProductWithoutPrice];
+	var mockArrEditingWithoutImagePath = 	['editing', mockProductWithoutImagePath];
+
+	var mockArrAddingValid = 				['adding', mockProductValid];
+
 	/* ----------$end Controller Variables */
 
-	describe("when controller is defined, ", function () {
+	describe("when controller is defined with $scope.modify = 'editing', ", function () {
 		// Hér kæmu sérstök beforeEach, þar á meðal sem býr til controller
 		beforeEach(inject(function($controller, $rootScope) {
 			$scope = $rootScope.$new();
 			productDlgController = $controller('productDlgController', {
 				$scope: $scope,
 				centrisNotify: mockCentrisNotify,
-				productdetails: mockProductValid
+				arr: mockArrEditingValid
 			});
 		}));
 
@@ -76,6 +84,23 @@ describe("productDlgController", function() {
 		});
 	});
 
+	describe("when controller is defined with $scope.modify = 'adding', ", function () {
+		// Hér kæmu sérstök beforeEach, þar á meðal sem býr til controller
+		beforeEach(inject(function($controller, $rootScope) {
+			$scope = $rootScope.$new();
+			productDlgController = $controller('productDlgController', {
+				$scope: $scope,
+				centrisNotify: mockCentrisNotify,
+				arr: mockArrAddingValid
+			});
+		}));
+
+		it ("should set $scope.edit to false", function() {
+			expect($scope.edit).toEqual(false);
+		});
+
+	});
+
 	describe("when productdetails is", function() {
 		beforeEach(inject(function($controller, $rootScope) {
 			$scope = $rootScope.$new();
@@ -84,7 +109,7 @@ describe("productDlgController", function() {
 			productDlgController = $controller('productDlgController', {
 				$scope: $scope,
 				centrisNotify: mockCentrisNotify,
-				productdetails: undefined
+				arr: mockArrEditingUndefined
 			});
 			spyOn(mockCentrisNotify, "error");
 			spyOn(mockCentrisNotify, "success");
@@ -134,7 +159,7 @@ describe("productDlgController", function() {
 			productDlgController = $controller('productDlgController', {
 				$scope: $scope,
 				centrisNotify: mockCentrisNotify,
-				productdetails: mockProductValid
+				arr: mockArrEditingValid
 			});
 			spyOn($scope, "$dismiss");
 		}));
@@ -155,7 +180,7 @@ describe("productDlgController", function() {
 		});
 
 	});
-})
+});
 
 
 
