@@ -21,7 +21,7 @@
 
 	.thumbnail {
 		position:relative;
-		height:200px;
+		height:12.5vh;
 		width: auto;
 		z-index: 5;
 		transition: all 500ms 0ms ease-in-out;
@@ -29,7 +29,7 @@
 		padding:1px;
 		&:hover {
 			z-index: 10;
-			transform: scale(2);
+			transform: scale(2.3);
 		}
 	}
 	.content {
@@ -209,7 +209,11 @@
 		top: 0;
 	}
 }
-
+.glyphFix {
+	.glyphicon {
+		top:-35px;
+	}
+}
 .noHighlight {
 	cursor:pointer;
 	user-select: none;                                         
